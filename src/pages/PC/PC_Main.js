@@ -119,7 +119,7 @@ const TitleText = styled.div`
   display: flex;
   align-items: center;
 
-  animation: fadeIn 1s;
+  animation: fadeInObject 0.8s;
   animation-delay: 1s;
   animation-fill-mode: backwards;
 `;
@@ -133,8 +133,8 @@ const SubtitleText = styled.div`
   display: flex;
   align-items: center;
 
-  animation: fadeIn 1s;
-  animation-delay: 1s;
+  animation: fadeInObject 0.8s;
+  animation-delay: 1.5s;
   animation-fill-mode: backwards;
 `;
 
@@ -149,8 +149,8 @@ const DownloadText = styled.div`
   display: flex;
   align-items: center;
 
-  animation: fadeIn 1s;
-  animation-delay: 1s;
+  animation: fadeInObject 0.8s;
+  animation-delay: 1.5s;
   animation-fill-mode: backwards;
 `;
 
@@ -159,8 +159,8 @@ const DownloadButtonContainer = styled.div`
   width: 336px;
   justify-content: space-between;
 
-  animation: fadeIn 1s;
-  animation-delay: 1s;
+  animation: fadeInObject 0.8s;
+  animation-delay: 1.5s;
   animation-fill-mode: backwards;
 `;
 
@@ -197,8 +197,7 @@ const Line = styled.div`
   height: 1px;
   width: 85vw;
   background-color: white;
-
-  animation: fadeInLine 1.5s;
+  animation: fadeInLine 1.2s;
   animation-delay: 1.5s;
   animation-fill-mode: backwards;
   animation-timing-function: ease-in-out;
@@ -213,7 +212,7 @@ const GasomannAppLogo = styled.img`
   height: 75.25vh;
   padding-top: 9px;
 
-  animation: fadeIn 1s;
+  animation: fadeInApp 0.8s;
   animation-delay: 1s;
   animation-fill-mode: backwards;
 `;
@@ -223,7 +222,7 @@ const MainAppImage = styled.img`
   left: 62px;
   height: 81.3vh;
 
-  animation: fadeIn 1s;
-  animation-delay: 1s;
+  animation: fadeInApp 0.8s;
+  animation-delay: 1.5s;
   animation-fill-mode: backwards;
 `;

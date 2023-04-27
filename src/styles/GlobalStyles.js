@@ -74,12 +74,22 @@ export default createGlobalStyle`
     }
   }
 
-  @keyframes fadeIn {
+  @keyframes rotate {
+    0% {
+      /* transform-origin: 49.6% 50%; */
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+
+  /* @keyframes fadeIn {
     0% {
       opacity: 0;
     }
     to {
       opacity: 1;
     }
-  }
+  } */
 `;
