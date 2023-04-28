@@ -61,7 +61,7 @@ export default function PC_Second() {
 }
 
 const MainContainer = styled.div`
-  width: 100vw;
+  width: 1440px;
   height: 1065px;
   display: flex;
   align-items: center;
@@ -126,14 +126,13 @@ const LeftTextWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: black;
 `;
 
 const LeftText = styled.div`
   font-size: 35px;
   font-weight: 700;
   color: white;
-  width: 198px;
+  width: 253px;
   text-align: center;
 `;
 
@@ -289,182 +288,3 @@ const BoxText = styled.div`
   font-weight: 600;
   color: white;
 `;
-//641-523=118
-//719.5 641
-
-// const NavBarContainer = styled.div`
-//   display: flex;
-//   height: 71px;
-//   padding-left: 4.1vw;
-//   padding-right: 5.7vw;
-//   align-items: center;
-//   justify-content: space-between;
-// `;
-
-// const LogoImage = styled.img`
-//   width: 162px;
-// `;
-
-// const LinkContainer = styled.div`
-//   /* width: 34.4vw; */
-//   width: 496px;
-//   height: 35px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// `;
-
-// const NavBarText = styled.div`
-//   font-family: 'GmarketSans';
-//   font-size: 16px;
-//   color: white;
-//   cursor: pointer;
-// `;
-
-// const AppDownloadButton = styled.div`
-//   width: 112px;
-//   height: 35px;
-//   border-radius: 50px;
-//   background-color: white;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-family: 'Pretendard';
-//   font-size: 16px;
-//   font-weight: 700;
-//   color: #2484f3;
-//   cursor: pointer;
-// `;
-
-// const BodyContainer = styled.div`
-//   position: relative;
-//   display: flex;
-//   justify-content: space-between;
-//   padding-left: 9.16vw;
-//   padding-right: 13.5vw;
-// `;
-
-// const LeftSectionContainer = styled.div`
-//   width: 455px;
-//   margin-top: 20.3vh;
-// `;
-
-// const TitleText = styled.div`
-//   width: 455px;
-//   height: 65px;
-//   font-family: 'Pretendard';
-//   font-size: 50px;
-//   font-weight: 800;
-//   color: white;
-//   margin-bottom: 1vh;
-//   display: flex;
-//   align-items: center;
-
-//   animation: fadeInObject 0.8s;
-//   animation-delay: 1s;
-//   animation-fill-mode: backwards;
-// `;
-
-// const SubtitleText = styled.div`
-//   height: 38px;
-//   font-family: 'Pretendard';
-//   font-size: 24px;
-//   font-weight: 600;
-//   color: white;
-//   display: flex;
-//   align-items: center;
-
-//   animation: fadeInObject 0.8s;
-//   animation-delay: 1.5s;
-//   animation-fill-mode: backwards;
-// `;
-
-// const DownloadText = styled.div`
-//   height: 22px;
-//   margin-top: 11.26vh;
-//   margin-bottom: 2.1vh;
-//   font-family: 'Pretendard';
-//   font-size: 14px;
-//   font-weight: 700;
-//   color: white;
-//   display: flex;
-//   align-items: center;
-
-//   animation: fadeInObject 0.8s;
-//   animation-delay: 1.5s;
-//   animation-fill-mode: backwards;
-// `;
-
-// const DownloadButtonContainer = styled.div`
-//   display: flex;
-//   width: 336px;
-//   justify-content: space-between;
-
-//   animation: fadeInObject 0.8s;
-//   animation-delay: 1.5s;
-//   animation-fill-mode: backwards;
-// `;
-
-// const DownloadButton = styled.div`
-//   width: 162px;
-//   height: 46px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: white;
-//   border-radius: 6px;
-//   cursor: pointer;
-// `;
-
-// const DownloadButtonImage = styled.img`
-//   width: 20px;
-//   height: 20px;
-//   margin-right: 4px;
-// `;
-
-// const DownloadButtonText = styled.div`
-//   height: 26px;
-//   font-family: 'Pretendard';
-//   font-size: 16px;
-//   font-weight: 600;
-//   display: flex;
-//   align-items: center;
-// `;
-
-// const Line = styled.div`
-//   position: absolute;
-//   top: 46.04vh;
-//   left: 0;
-//   height: 1px;
-//   width: 85vw;
-//   background-color: white;
-
-//   animation: fadeInLine 1.2s;
-//   animation-delay: 1.5s;
-//   animation-fill-mode: backwards;
-//   animation-timing-function: ease-in-out;
-// `;
-
-// const RightSectionContainer = styled.div`
-//   position: relative;
-//   margin-top: 4.45vh;
-// `;
-
-// const GasomannAppLogo = styled.img`
-//   height: 75.25vh;
-//   padding-top: 9px;
-
-//   animation: fadeInApp 0.8s;
-//   animation-delay: 1s;
-//   animation-fill-mode: backwards;
-// `;
-
-// const MainAppImage = styled.img`
-//   position: absolute;
-//   left: 62px;
-//   height: 81.3vh;
-
-//   animation: fadeInApp 0.8s;
-//   animation-delay: 1.5s;
-//   animation-fill-mode: backwards;
-// `;

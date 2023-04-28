@@ -46,7 +46,7 @@ export default function PC_Main() {
 }
 
 const MainContainer = styled.div`
-  width: 100vw;
+  width: 1440px;
   height: 100vh;
   background-color: #2484f3;
 `;
