@@ -45,16 +45,12 @@ const MainContainer = styled.div`
 `;
 
 const Line = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 719.5px;
   height: 120px;
   width: 1px;
   background-color: black;
 `;
 
 const TitleContainer = styled.div`
-  padding-top: 120px;
   display: flex;
   align-items: center;
   flex-direction: column;
