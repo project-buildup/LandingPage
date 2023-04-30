@@ -7,8 +7,11 @@ import blueArrowDown from '../../assets/blueArrowDown.png';
 import blueArrowUp from '../../assets/blueArrowUp.png';
 import redBackIcon from '../../assets/redBackIcon.png';
 import moneyIcon from '../../assets/moneyIcon.png';
+import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
 export default function PC_Second() {
+  const [setRef, isVisible] = useAnimationOnScroll();
+
   return (
     <MainContainer>
       <TitleContainer>
@@ -28,14 +31,14 @@ export default function PC_Second() {
           <CircleImg src={circleImage} alt="circle" />
           <ArrowContainer>
             <ArrowWrapper>
-              <ArrowHiddenWrapper>
+              <ArrowHiddenWrapper className={isVisible && 'animation'}>
                 <ArrowImg src={blueArrowDown} alt="arrow" />
               </ArrowHiddenWrapper>
             </ArrowWrapper>
           </ArrowContainer>
           <ArrowContainer2>
             <ArrowWrapper2>
-              <ArrowHiddenWrapper2>
+              <ArrowHiddenWrapper2 ref={setRef} className={isVisible && 'animation'}>
                 <ArrowImg2 src={blueArrowUp} alt="arrow" />
               </ArrowHiddenWrapper2>
             </ArrowWrapper2>
@@ -176,10 +179,11 @@ const ArrowHiddenWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  transform-origin: 49.5% 50%;
-  animation: rotate 1.2s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
+  &.animation {
+    transform-origin: 49.5% 50%;
+    animation: rotate 1.2s forwards;
+    animation-delay: 0s;
+  }
 `;
 const ArrowImg = styled.img`
   width: 536px;
@@ -214,10 +218,11 @@ const ArrowHiddenWrapper2 = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  transform-origin: 50.5% 50%;
-  animation: rotate 1.2s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
+  &.animation {
+    transform-origin: 50.5% 50%;
+    animation: rotate 1.2s forwards;
+    animation-delay: 0s;
+  }
 `;
 const ArrowImg2 = styled.img`
   width: 536px;

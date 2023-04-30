@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import phoneImage from '../../../assets/savingFirstPhoneImage.png';
-import challengeTexiImage from '../../../assets/challengeTexiImage.png';
-import challengeDeliveryImage from '../../../assets/challengeDeliveryImage.png';
+import phoneImage from '../../../assets/valueSecondPhoneImage.png';
+import checkIcon from '../../../assets/checkIcon.png';
+import couponImage from '../../../assets/couponImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function PC_Saving_Second() {
+export default function PC_Value_Second() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -13,24 +13,19 @@ export default function PC_Saving_Second() {
       <BodyContainer ref={setRef}>
         <TitleContainer className={isVisible && 'animation'}>
           <TitleBox>
-            <TitleBoxText>STEP 01</TitleBoxText>
+            <TitleBoxText>STEP 02</TitleBoxText>
           </TitleBox>
-          <TitleText>내가 참여하고싶은</TitleText>
+          <TitleText>쿠폰별 달성금액 절약</TitleText>
           <TitleTextWrapper>
-            <TitleText>챌린지&nbsp;</TitleText>
-            <TitleBlueText>선택하기</TitleBlueText>
+            <TitleText>성공하고 가치소비&nbsp;</TitleText>
+            <TitleBlueText>할인받기</TitleBlueText>
           </TitleTextWrapper>
-          <TitleContentText>다양한 챌린지 선택의 폭으로</TitleContentText>
-          <TitleContentText>지겹지않게 도전할 수 있어요!</TitleContentText>
+          <TitleContentText>쿠폰 별 일정금액 절약만 성공하면,</TitleContentText>
+          <TitleContentText>할인쿠폰까지 제공해줘요!</TitleContentText>
         </TitleContainer>
         <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <ChallengeImg id="texi" className={isVisible && 'animation'} src={challengeTexiImage} alt="texi challenge" />
-        <ChallengeImg
-          id="delivery"
-          className={isVisible && 'animation'}
-          src={challengeDeliveryImage}
-          alt="delivery challenge"
-        />
+        <CheckIcon className={isVisible && 'animation'} src={checkIcon} alt="like icon" />
+        <CouponImg className={isVisible && 'animation'} src={couponImage} alt="coupon" />
       </BodyContainer>
     </MainContainer>
   );
@@ -38,17 +33,18 @@ export default function PC_Saving_Second() {
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 859px; //1459
+  height: 882px; //1459
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #f9f9fa;
 `;
 
 const BodyContainer = styled.div`
   position: relative;
   width: 1440px;
   height: 615px;
-  margin-top: 131.5px; //147 - 15.5
+  margin-top: 158.5px; //174 - 15.5
   padding-left: 236px;
   padding-right: 345px;
   display: flex;
@@ -56,7 +52,6 @@ const BodyContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  width: 322px;
   height: 246px;
   margin-top: 15.5px;
   display: flex;
@@ -132,28 +127,28 @@ const PhoneImg = styled.img`
   }
 `;
 
-const ChallengeImg = styled.img`
+const CheckIcon = styled.img`
   position: absolute;
-  width: 345px; // 345, 303, 42
-  height: 134px; // 134, 92, 42
-
-  &#texi {
-    top: 80px;
-    right: 150px;
-    opacity: 0;
-    &.animation {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 1s;
-    }
+  width: 159px;
+  height: 159px;
+  bottom: 60px;
+  right: 565px;
+  opacity: 0;
+  &.animation {
+    animation: fadeInObject 0.8s forwards;
+    animation-delay: 1s;
   }
+`;
 
-  &#delivery {
-    bottom: 64px;
-    right: 560px;
-    opacity: 0;
-    &.animation {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 1.4s;
-    }
+const CouponImg = styled.img`
+  position: absolute;
+  width: 249px;
+  height: 399px;
+  top: 58px;
+  right: 230px;
+  opacity: 0;
+  &.animation {
+    animation: fadeInApp 0.8s forwards;
+    animation-delay: 1.4s;
   }
 `;

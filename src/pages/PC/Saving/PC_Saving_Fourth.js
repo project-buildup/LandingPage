@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import phoneImage from '../../../assets/savingFirstPhoneImage.png';
-import challengeTexiImage from '../../../assets/challengeTexiImage.png';
-import challengeDeliveryImage from '../../../assets/challengeDeliveryImage.png';
+import phoneImage from '../../../assets/savingThirdPhoneImage.png';
+import archivingCardImage from '../../../assets/archivingCardImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function PC_Saving_Second() {
+export default function PC_Saving_Fourth() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -13,24 +12,18 @@ export default function PC_Saving_Second() {
       <BodyContainer ref={setRef}>
         <TitleContainer className={isVisible && 'animation'}>
           <TitleBox>
-            <TitleBoxText>STEP 01</TitleBoxText>
+            <TitleBoxText>STEP 03</TitleBoxText>
           </TitleBox>
-          <TitleText>내가 참여하고싶은</TitleText>
+          <TitleText>나의 절약 업적을</TitleText>
           <TitleTextWrapper>
-            <TitleText>챌린지&nbsp;</TitleText>
-            <TitleBlueText>선택하기</TitleBlueText>
+            <TitleBlueText>한 번에 확인</TitleBlueText>
+            <TitleText>해보세요</TitleText>
           </TitleTextWrapper>
-          <TitleContentText>다양한 챌린지 선택의 폭으로</TitleContentText>
-          <TitleContentText>지겹지않게 도전할 수 있어요!</TitleContentText>
+          <TitleContentText>절약을 했다는 것</TitleContentText>
+          <TitleContentText>그 자체만으로 뿌듯해져요</TitleContentText>
         </TitleContainer>
         <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <ChallengeImg id="texi" className={isVisible && 'animation'} src={challengeTexiImage} alt="texi challenge" />
-        <ChallengeImg
-          id="delivery"
-          className={isVisible && 'animation'}
-          src={challengeDeliveryImage}
-          alt="delivery challenge"
-        />
+        <ArchivingImg className={isVisible && 'animation'} src={archivingCardImage} alt="archiving" />
       </BodyContainer>
     </MainContainer>
   );
@@ -38,17 +31,18 @@ export default function PC_Saving_Second() {
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 859px; //1459
+  height: 972px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #eff6ff;
 `;
 
 const BodyContainer = styled.div`
   position: relative;
   width: 1440px;
   height: 615px;
-  margin-top: 131.5px; //147 - 15.5
+  margin-top: 179.5px; //195 - 15.5
   padding-left: 236px;
   padding-right: 345px;
   display: flex;
@@ -56,7 +50,6 @@ const BodyContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  width: 322px;
   height: 246px;
   margin-top: 15.5px;
   display: flex;
@@ -78,7 +71,7 @@ const TitleBox = styled.div`
 `;
 
 const TitleBoxText = styled.div`
-  height: 34px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,28 +125,15 @@ const PhoneImg = styled.img`
   }
 `;
 
-const ChallengeImg = styled.img`
+const ArchivingImg = styled.img`
   position: absolute;
-  width: 345px; // 345, 303, 42
-  height: 134px; // 134, 92, 42
-
-  &#texi {
-    top: 80px;
-    right: 150px;
-    opacity: 0;
-    &.animation {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 1s;
-    }
-  }
-
-  &#delivery {
-    bottom: 64px;
-    right: 560px;
-    opacity: 0;
-    &.animation {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 1.4s;
-    }
+  width: 238px;
+  height: 423px;
+  top: 126px;
+  right: 230px;
+  opacity: 0;
+  &.animation {
+    animation: fadeInApp 0.8s forwards;
+    animation-delay: 1s;
   }
 `;

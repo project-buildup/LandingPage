@@ -1,41 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
-import thirdPageImage from '../../assets/thirdPageImage.png';
+import gasomannCircle from '../../assets/gasomannCircle.png';
+import valuableImage from '../../assets/valuableImage.png';
+import stressfuImage from '../../assets/stressfuImage.png';
+import dotCircle from '../../assets/dotCircle.png';
+import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
 export default function PC_Third() {
+  const [setRef, isVisible] = useAnimationOnScroll();
   return (
     <MainContainer>
       <TitleContainer>
         <TitleBox>당신의 절약과 소비,</TitleBox>
         <TitleText>GASOMANN이 연결합니다</TitleText>
       </TitleContainer>
-      <BodyContainer>
-        <ThirdPageImg src={thirdPageImage} alt="circle" />
-        <TextContainer>
+      <DotCircle className={isVisible && 'animation'} src={dotCircle} alt="dot circle" />
+      <GasomannCircle src={gasomannCircle} alt="gasomann circle" />
+      <Line className={isVisible && 'animation'} />
+      <BodyContainer ref={setRef} className={isVisible && 'animation'}>
+        <ContentContainer>
+          <ContentImg src={valuableImage} alt="valuable" />
           <TextWrapper>
-            <BoldText>가치있는 소비하기</BoldText>
+            <BoldText>가치 있는 소비하기</BoldText>
             <Text>나를 성장시킬 수 있는</Text>
             <Text>돈이 아깝지 않은 소비만 하기</Text>
           </TextWrapper>
-          <Line />
+        </ContentContainer>
+        <ContentContainer>
+          <ContentImg src={stressfuImage} alt="stressful" />
           <TextWrapper>
             <BoldText>충동적인 홧김소비는 그만!</BoldText>
             <Text>아, 조금만 참을 걸...</Text>
             <Text>다음날 후회했던 소비 줄이기</Text>
           </TextWrapper>
-        </TextContainer>
+        </ContentContainer>
       </BodyContainer>
     </MainContainer>
   );
 }
 
 const MainContainer = styled.div`
+  position: relative;
   width: 1440px;
   height: 1068px;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #ffffff;
+  z-index: 1;
 `;
 
 const TitleContainer = styled.div`
@@ -69,41 +81,64 @@ const TitleText = styled.div`
   font-size: 40px;
 `;
 
+const DotCircle = styled.img`
+  position: absolute;
+  top: 340px;
+  width: 470px;
+  height: 470px;
+  opacity: 0;
+  &.animation {
+    animation: fadeInFromTop 1s ease-in-out forwards;
+  }
+`;
+
+const GasomannCircle = styled.img`
+  position: relative;
+  width: 143px;
+  height: 143px;
+  margin-top: 29px;
+`;
+
 const BodyContainer = styled.div`
   position: relative;
-  margin-top: 29px;
-  width: 100vw;
+  margin-top: 70px;
+  width: 876px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  &.animation {
+    animation: fadeInFromTop 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+  }
 `;
 
 const Line = styled.div`
   position: absolute;
-  top: 522px;
+  bottom: -120px;
   left: 719.5px;
-  height: 256px;
+  height: 378px; //258
   width: 1px;
   background-color: black;
+  opacity: 0;
+  &.animation {
+    animation: fadeInFromTop 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+  }
 `;
 
-const ThirdPageImg = styled.img`
-  width: 876px;
-  height: 545px;
+const ContentContainer = styled.div`
+  width: 332px;
+  height: 454px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const TextContainer = styled.div`
-  width: 790px;
-  height: 96px;
-  margin-top: 32px;
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-left: 8px;
+`;
+
+const ContentImg = styled.img`
+  width: 332px;
+  height: 332px;
 `;
 
 const TextWrapper = styled.div`

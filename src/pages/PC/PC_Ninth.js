@@ -12,12 +12,12 @@ export default function PC_Ninth() {
         <TextContainer>
           <TextWrapper className="box1">
             <Text>(주)프로젝트빌드업 | 대표 하동균</Text>
-            <Text>사업자등록번호 123-45-678910</Text>
+            <Text>사업자등록번호 166-86-02772</Text>
           </TextWrapper>
           <TextWrapper className="box2">
             <IconTextWrapper>
               <Icon src={locationIcon} alt="location" />
-              <Text>대구광역시 북구 대학로 80 경북대학교 글로벌플라자 101호 스타트업허브</Text>
+              <Text>대구광역시 북구 대학로 80 (산격동, 경북대학교 글로벌프라자 101호)</Text>
             </IconTextWrapper>
             <IconTextWrapper>
               <Icon src={mailIcon} alt="mail" />
@@ -58,6 +58,7 @@ const Logo = styled.img`
 `;
 
 const TextContainer = styled.div`
+  position: relative;
   display: flex;
 `;
 
@@ -69,8 +70,14 @@ const TextWrapper = styled.div`
     margin-right: 378px;
   }
   &.box3 {
+    width: 261px;
+    height: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 81px;
+    top: 0px;
   }
 `;
 
@@ -100,10 +107,7 @@ const Text = styled.div`
 
 const TextBar = styled.div`
   height: 20px;
-  display: flex;
-  align-items: center;
   color: white;
   font-size: 13px;
   font-weight: 400;
-  margin: 12px;
 `;

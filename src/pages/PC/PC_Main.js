@@ -118,10 +118,8 @@ const TitleText = styled.div`
   margin-bottom: 1vh;
   display: flex;
   align-items: center;
-
-  animation: fadeInObject 0.8s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
+  animation: fadeInObject 0.8s backwards;
+  animation-delay: 0.6s;
 `;
 
 const SubtitleText = styled.div`
@@ -133,9 +131,8 @@ const SubtitleText = styled.div`
   display: flex;
   align-items: center;
 
-  animation: fadeInObject 0.8s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
+  animation: fadeInObject 0.8s backwards;
+  animation-delay: 1.1s;
 `;
 
 const DownloadText = styled.div`
@@ -149,9 +146,8 @@ const DownloadText = styled.div`
   display: flex;
   align-items: center;
 
-  animation: fadeInObject 0.8s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
+  animation: fadeInObject 0.8s backwards;
+  animation-delay: 1.1s;
 `;
 
 const DownloadButtonContainer = styled.div`
@@ -159,9 +155,8 @@ const DownloadButtonContainer = styled.div`
   width: 336px;
   justify-content: space-between;
 
-  animation: fadeInObject 0.8s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
+  animation: fadeInObject 0.8s backwards;
+  animation-delay: 1.1s;
 `;
 
 const DownloadButton = styled.div`
@@ -197,10 +192,8 @@ const Line = styled.div`
   height: 1px;
   width: 85vw;
   background-color: white;
-  animation: fadeInLine 1.2s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
-  animation-timing-function: ease-in-out;
+  animation: fadeInLine 1.2s ease-in-out backwards;
+  animation-delay: 1.1s;
 `;
 
 const RightSectionContainer = styled.div`
@@ -211,10 +204,8 @@ const RightSectionContainer = styled.div`
 const GasomannAppLogo = styled.img`
   height: 75.25vh;
   padding-top: 9px;
-
-  animation: fadeInApp 0.8s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
+  animation: fadeInApp 0.8s backwards;
+  animation-delay: 0.6s;
 `;
 
 const MainAppImage = styled.img`
@@ -222,7 +213,6 @@ const MainAppImage = styled.img`
   left: 62px;
   height: 81.3vh;
 
-  animation: fadeInApp 0.8s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
+  animation: fadeInApp 0.8s backwards;
+  animation-delay: 1.1s;
 `;

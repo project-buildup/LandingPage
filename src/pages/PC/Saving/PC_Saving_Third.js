@@ -1,26 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
-import phoneImage from '../../../assets/savingThirdPhoneImage.png';
-import archivingCardImage from '../../../assets/archivingCardImage.png';
+import phoneImage from '../../../assets/savingSecondPhoneImage.png';
+import videoWrapper from '../../../assets/videoWrapper.png';
+import kakaopayIcon from '../../../assets/kakaopayIcon.png';
+import tossIcon from '../../../assets/tossIcon.png';
+import banksaladIcon from '../../../assets/banksaladIcon.png';
+import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 export default function PC_Saving_Third() {
+  const [setRef, isVisible] = useAnimationOnScroll();
+  const videoRef = useRef(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      videoRef.current.play();
+    }
+  }, [isVisible]);
+
   return (
     <MainContainer>
-      <BodyContainer>
-        <TitleContainer>
+      <BodyContainer ref={setRef}>
+        <TitleContainer className={isVisible && 'animation'}>
           <TitleBox>
-            <TitleBoxText>STEP 03</TitleBoxText>
+            <TitleBoxText>STEP 02</TitleBoxText>
           </TitleBox>
-          <TitleText>나의 절약 업적을</TitleText>
+          <TitleText>절약할 때마다</TitleText>
+          <TitleText>절약계좌에</TitleText>
           <TitleTextWrapper>
-            <TitleBlueText>한 번에 확인</TitleBlueText>
-            <TitleText>해보세요</TitleText>
+            <TitleText>절약금액&nbsp;</TitleText>
+            <TitleBlueText>송금하기</TitleBlueText>
           </TitleTextWrapper>
-          <TitleContentText>절약을 했다는 것</TitleContentText>
-          <TitleContentText>그 자체만으로 뿌듯해져요</TitleContentText>
+          <TitleContentText>내가 주로 쓰던 뱅킹앱으로</TitleContentText>
+          <TitleContentText>간단하게 송금할 수 있어요!</TitleContentText>
+          <IconContainer>
+            <Icon id="kakaopay" className={isVisible && 'animation'} src={kakaopayIcon} alt="texi challenge" />
+            <Icon id="toss" className={isVisible && 'animation'} src={tossIcon} alt="delivery challenge" />
+            <Icon id="banksalad" className={isVisible && 'animation'} src={banksaladIcon} alt="delivery challenge" />
+          </IconContainer>
         </TitleContainer>
-        <PhoneImg src={phoneImage} alt="phone" />
-        <ArchivingImg src={archivingCardImage} alt="archiving" />
+        <VideoContainer className={isVisible && 'animation'}>
+          <RemitVideo>
+            <video ref={videoRef} muted loop width="265px">
+              <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
+            </video>
+          </RemitVideo>
+          <VideoWrapper src={videoWrapper} alt="videoWrapper" />
+        </VideoContainer>
       </BodyContainer>
     </MainContainer>
   );
@@ -28,18 +55,18 @@ export default function PC_Saving_Third() {
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 972px;
+  height: 928px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #eff6ff;
+  background-color: #f9f9fa;
 `;
 
 const BodyContainer = styled.div`
   position: relative;
   width: 1440px;
   height: 615px;
-  margin-top: 179.5px; //195 - 15.5
+  margin-top: 158.5px; // 174 - 15.5
   padding-left: 236px;
   padding-right: 345px;
   display: flex;
@@ -51,6 +78,11 @@ const TitleContainer = styled.div`
   margin-top: 15.5px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+
+  &.animation {
+    animation: fadeInObject 0.8s forwards;
+  }
 `;
 
 const TitleBox = styled.div`
@@ -64,7 +96,7 @@ const TitleBox = styled.div`
 `;
 
 const TitleBoxText = styled.div`
-  height: 26px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,15 +140,77 @@ const TitleContentText = styled.div`
   font-size: 25px;
 `;
 
-const PhoneImg = styled.img`
-  width: 315px; //285 30
-  height: 615px; //584 31
+const IconContainer = styled.div`
+  width: 304.37px;
+  height: 78.86px;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-const ArchivingImg = styled.img`
+const Icon = styled.img`
+  &#kakaopay {
+    width: 103px;
+    height: 42.65px;
+    opacity: 0;
+    &.animation {
+      animation: fadeInObject 0.8s forwards;
+      animation-delay: 0.6s;
+    }
+  }
+
+  &#toss {
+    width: 74.51px;
+    height: 71.62px;
+    opacity: 0;
+    &.animation {
+      animation: fadeInObject 0.8s forwards;
+      animation-delay: 0.8s;
+    }
+  }
+
+  &#banksalad {
+    width: 78.86px;
+    height: 78.86px;
+    opacity: 0;
+    &.animation {
+      animation: fadeInObject 0.8s forwards;
+
+      animation-delay: 1s;
+    }
+  }
+`;
+
+const VideoContainer = styled.div`
+  position: relative;
+  width: 315px; //285 30
+  height: 615px; //584 31
+  background-image: url(${phoneImage});
+  background-size: 315px 615px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  &.animation {
+    animation: fadeInApp 0.8s forwards;
+    animation-delay: 0.6s;
+  }
+`;
+
+const RemitVideo = styled.div`
+  width: 265px;
+  height: 552px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`;
+
+const VideoWrapper = styled.img`
   position: absolute;
-  width: 238px;
-  height: 423px;
-  top: 126px;
-  right: 230px;
+  width: 285px;
+  height: 584px;
 `;

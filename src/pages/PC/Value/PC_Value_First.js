@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import phoneImage from '../../../assets/savingFirstPhoneImage.png';
-import challengeTexiImage from '../../../assets/challengeTexiImage.png';
-import challengeDeliveryImage from '../../../assets/challengeDeliveryImage.png';
+import phoneImage from '../../../assets/valueFirstPhoneImage.png';
+import likeIcon from '../../../assets/likeIcon.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function PC_Saving_Second() {
+export default function PC_Value_First() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -15,22 +14,16 @@ export default function PC_Saving_Second() {
           <TitleBox>
             <TitleBoxText>STEP 01</TitleBoxText>
           </TitleBox>
-          <TitleText>내가 참여하고싶은</TitleText>
+          <TitleText>GASOMANN에서 나에게</TitleText>
           <TitleTextWrapper>
-            <TitleText>챌린지&nbsp;</TitleText>
-            <TitleBlueText>선택하기</TitleBlueText>
+            <TitleText>필요한 가치소비를&nbsp;</TitleText>
+            <TitleBlueText>추천받기</TitleBlueText>
           </TitleTextWrapper>
-          <TitleContentText>다양한 챌린지 선택의 폭으로</TitleContentText>
-          <TitleContentText>지겹지않게 도전할 수 있어요!</TitleContentText>
+          <TitleContentText>검증과정을 통해 후회하지 않을</TitleContentText>
+          <TitleContentText>가치있는 소비만 추천해요!</TitleContentText>
         </TitleContainer>
         <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <ChallengeImg id="texi" className={isVisible && 'animation'} src={challengeTexiImage} alt="texi challenge" />
-        <ChallengeImg
-          id="delivery"
-          className={isVisible && 'animation'}
-          src={challengeDeliveryImage}
-          alt="delivery challenge"
-        />
+        <LikeIcon className={isVisible && 'animation'} src={likeIcon} alt="like icon" />
       </BodyContainer>
     </MainContainer>
   );
@@ -38,7 +31,7 @@ export default function PC_Saving_Second() {
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 859px; //1459
+  height: 880px; //1459
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -48,7 +41,7 @@ const BodyContainer = styled.div`
   position: relative;
   width: 1440px;
   height: 615px;
-  margin-top: 131.5px; //147 - 15.5
+  margin-top: 176.5px; //192 - 15.5
   padding-left: 236px;
   padding-right: 345px;
   display: flex;
@@ -56,7 +49,6 @@ const BodyContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  width: 322px;
   height: 246px;
   margin-top: 15.5px;
   display: flex;
@@ -132,28 +124,15 @@ const PhoneImg = styled.img`
   }
 `;
 
-const ChallengeImg = styled.img`
+const LikeIcon = styled.img`
   position: absolute;
-  width: 345px; // 345, 303, 42
-  height: 134px; // 134, 92, 42
-
-  &#texi {
-    top: 80px;
-    right: 150px;
-    opacity: 0;
-    &.animation {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 1s;
-    }
-  }
-
-  &#delivery {
-    bottom: 64px;
-    right: 560px;
-    opacity: 0;
-    &.animation {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 1.4s;
-    }
+  width: 159px;
+  height: 159px;
+  bottom: 160px;
+  right: 560px;
+  opacity: 0;
+  &.animation {
+    animation: fadeInObject 0.8s forwards;
+    animation-delay: 1s;
   }
 `;

@@ -2,17 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import coffeeImage from '../../assets/coffeeImage.png';
 import healthImage from '../../assets/healthImage.png';
+import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
 export default function PC_Fourth() {
+  const [setRef, isVisible] = useAnimationOnScroll();
+
   return (
     <MainContainer>
-      <Line />
       <TitleContainer>
         <TitleBox>MEANING</TitleBox>
         <TitleText>홧김소비와 가치소비란?</TitleText>
       </TitleContainer>
-      <BodyContainer>
-        <CardContainer>
+      <BodyContainer ref={setRef}>
+        <CardContainer id="left" className={isVisible && 'animation'}>
           <CircleImg src={coffeeImage} alt="coffee" />
           <TextWrapper>
             <BoldText>홧김소비</BoldText>
@@ -20,7 +22,7 @@ export default function PC_Fourth() {
             <BlueText>습관적으로 마시는 커피 · 충동적 쇼핑 등</BlueText>
           </TextWrapper>
         </CardContainer>
-        <CardContainer>
+        <CardContainer id="right" className={isVisible && 'animation'}>
           <CircleImg src={healthImage} alt="health" />
           <TextWrapper>
             <BoldText>가치소비</BoldText>
@@ -44,16 +46,11 @@ const MainContainer = styled.div`
   background-color: #eff6ff;
 `;
 
-const Line = styled.div`
-  height: 120px;
-  width: 1px;
-  background-color: black;
-`;
-
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 120px;
 `;
 
 const TitleBox = styled.div`
@@ -97,6 +94,17 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
+  opacity: 0;
+  &.animation {
+    &#left {
+      animation: fadeInObject 0.8s forwards;
+      animation-delay: 0.4s;
+    }
+    &#right {
+      animation: fadeInObject 0.8s forwards;
+      animation-delay: 0.8s;
+    }
+  }
 `;
 
 const CircleImg = styled.img`

@@ -29,5 +29,8 @@ function App() {
 export default App;
 
 const AppContainer = styled.div`
-  width: 1440px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
