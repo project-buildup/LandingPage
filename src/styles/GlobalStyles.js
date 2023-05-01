@@ -6,9 +6,6 @@ import PretendardSemiBold from '../assets/fonts//Pretendard-SemiBold.woff2';
 import PretendardRegular from '../assets/fonts/Pretendard-Regular.woff2';
 
 export default createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
   @font-face {
     font-family: "GmarketSans";
     src: local("GmarketSansBold"), local("GmarketSans-Bold"), local("Gmarket Sans Bold"),url(${GmarketSans}) format("woff2");
@@ -98,12 +95,8 @@ export default createGlobalStyle`
     }
   }
 
-  /* @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    to {
-      opacity: 0.4;
-    }
-  } */
+  * {
+    box-sizing: border-box;
+    font-family: 'Pretendard';
+  }
 `;
