@@ -38,7 +38,7 @@ export default function PC_Fourth() {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #eff6ff;
@@ -51,7 +51,6 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #eff6ff;
 `;
 
 const TitleContainer = styled.div`
@@ -105,12 +104,12 @@ const CardContainer = styled.div`
   opacity: 0;
   &.animation {
     &#left {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 0.4s;
+      animation: fadeInApp 1.2s forwards;
+      animation-delay: 0.6s;
     }
     &#right {
-      animation: fadeInObject 0.8s forwards;
-      animation-delay: 0.8s;
+      animation: fadeInApp 1.2s forwards;
+      animation-delay: 1.2s;
     }
   }
 `;

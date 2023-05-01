@@ -7,11 +7,12 @@ import PC_Saving_Fourth from './Saving/PC_Saving_Fourth';
 import PC_Value_First from './Value/PC_Value_First';
 import PC_Value_Second from './Value/PC_Value_Second';
 import PC_Value_Third from './Value/PC_Value_Third';
+import styled from 'styled-components';
 
 export default function PC_Toggle() {
   const [selected, setSelected] = useState('saving');
   return (
-    <div>
+    <ContainerWrapper>
       <PC_Fifth selected={selected} setSelected={setSelected} />
       {selected === 'saving' ? (
         <div>
@@ -27,6 +28,13 @@ export default function PC_Toggle() {
           <PC_Value_Third />
         </div>
       )}
-    </div>
+    </ContainerWrapper>
   );
 }
+
+const ContainerWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;

@@ -40,7 +40,7 @@ export default function PC_Ninth() {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #242627;
@@ -52,7 +52,6 @@ const MainContainer = styled.div`
   height: 314px;
   display: flex;
   flex-direction: column;
-  background-color: #242627;
 `;
 const BodyContainer = styled.div`
   margin-top: 74px;

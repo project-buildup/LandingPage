@@ -29,9 +29,10 @@ export default function PC_Fifth({ selected, setSelected }) {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #878787;
 `;
 
 const MainContainer = styled.div`
@@ -40,7 +41,6 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-bottom: 1px solid #878787;
 `;
 
 const TitleContainer = styled.div`

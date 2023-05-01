@@ -38,7 +38,7 @@ export default function PC_Saving_Second() {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
 `;

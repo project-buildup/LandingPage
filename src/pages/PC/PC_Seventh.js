@@ -34,7 +34,7 @@ export default function PC_Seventh() {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #f9f9fa;
@@ -47,7 +47,6 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #f9f9fa;
 `;
 
 const TitleContainer = styled.div`

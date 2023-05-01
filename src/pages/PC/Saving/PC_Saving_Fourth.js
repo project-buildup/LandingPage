@@ -31,7 +31,7 @@ export default function PC_Saving_Fourth() {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #eff6ff;
@@ -43,7 +43,6 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #eff6ff;
 `;
 
 const BodyContainer = styled.div`

@@ -19,11 +19,11 @@ export default function PC_Eighth() {
   );
 }
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-image: url(${eighthBackgroundImage});
-  background-size: 100vw 395px;
+  background-size: 100% 395px;
 `;
 
 const MainContainer = styled.div`

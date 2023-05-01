@@ -48,7 +48,8 @@ export default function PC_Main() {
 }
 
 const ContainerWrapper = styled.div`
-  width: 100vw;
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: #2484f3;
@@ -57,7 +58,6 @@ const ContainerWrapper = styled.div`
 const MainContainer = styled.div`
   width: 1440px;
   height: 100vh;
-  background-color: #2484f3;
 `;
 
 const NavBarContainer = styled.div`
@@ -105,7 +105,6 @@ const AppDownloadButton = styled.div`
 `;
 
 const BodyContainer = styled.div`
-  position: relative;
   display: flex;
   justify-content: space-between;
   padding-left: 9.16vw;
@@ -199,7 +198,7 @@ const Line = styled.div`
   top: 46.04vh;
   left: 0;
   height: 1px;
-  width: 85vw;
+  width: 60vw;
   background-color: white;
   animation: fadeInLine 1.2s ease-in-out backwards;
   animation-delay: 1.1s;
