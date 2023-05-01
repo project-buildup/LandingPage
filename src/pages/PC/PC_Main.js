@@ -36,7 +36,7 @@ export default function PC_Main() {
               </DownloadButton>
             </DownloadButtonContainer>
           </LeftSectionContainer>
-          <Line />
+          {window.innerHeight < 1040 && window.innerHeight > 640 && <Line />}
           <RightSectionContainer>
             <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
             <MainAppImage src={mainAppImage} alt="gasomann app logo" />
@@ -195,7 +195,7 @@ const DownloadButtonText = styled.div`
 
 const Line = styled.div`
   position: absolute;
-  top: 46.04vh;
+  top: 53%;
   left: 0;
   height: 1px;
   width: 60vw;
