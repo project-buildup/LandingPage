@@ -94,7 +94,6 @@ export default createGlobalStyle`
       transform: rotate(-180deg);
     }
   }
-
   * {
     box-sizing: border-box;
     font-family: 'Pretendard';
