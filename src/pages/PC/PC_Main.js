@@ -24,6 +24,9 @@ export default function PC_Main() {
             <TitleText>당신의 소비를 가치있게</TitleText>
             <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
             <SubtitleText>GASOMANN</SubtitleText>
+            <LineWrapper>
+              <Line />
+            </LineWrapper>
             <DownloadText>GASOMANN 앱 다운로드</DownloadText>
             <DownloadButtonContainer>
               <DownloadButton>
@@ -36,7 +39,6 @@ export default function PC_Main() {
               </DownloadButton>
             </DownloadButtonContainer>
           </LeftSectionContainer>
-          {window.innerHeight < 1040 && window.innerHeight > 640 && <Line />}
           <RightSectionContainer>
             <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
             <MainAppImage src={mainAppImage} alt="gasomann app logo" />
@@ -143,9 +145,24 @@ const SubtitleText = styled.div`
   animation-delay: 1.1s;
 `;
 
+const LineWrapper = styled.div`
+  position: relative;
+  height: 11.26vh;
+`;
+
+const Line = styled.div`
+  position: absolute;
+  top: 53%;
+  right: -72%;
+  height: 1px;
+  width: 72vw;
+  background-color: white;
+  animation: fadeInLine 1.2s ease-in-out backwards;
+  animation-delay: 1.1s;
+`;
+
 const DownloadText = styled.div`
   height: 22px;
-  margin-top: 11.26vh;
   margin-bottom: 2.1vh;
   font-family: 'Pretendard';
   font-size: 14px;
@@ -191,17 +208,6 @@ const DownloadButtonText = styled.div`
   font-weight: 600;
   display: flex;
   align-items: center;
-`;
-
-const Line = styled.div`
-  position: absolute;
-  top: 53%;
-  left: 0;
-  height: 1px;
-  width: 60vw;
-  background-color: white;
-  animation: fadeInLine 1.2s ease-in-out backwards;
-  animation-delay: 1.1s;
 `;
 
 const RightSectionContainer = styled.div`
