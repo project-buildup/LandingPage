@@ -9,35 +9,43 @@ import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 export default function PC_Third() {
   const [setRef, isVisible] = useAnimationOnScroll();
   return (
-    <MainContainer>
-      <TitleContainer>
-        <TitleBox>당신의 절약과 소비,</TitleBox>
-        <TitleText>GASOMANN이 연결합니다</TitleText>
-      </TitleContainer>
-      <DotCircle className={isVisible && 'animation'} src={dotCircle} alt="dot circle" />
-      <GasomannCircle src={gasomannCircle} alt="gasomann circle" />
-      <Line className={isVisible && 'animation'} />
-      <BodyContainer ref={setRef} className={isVisible && 'animation'}>
-        <ContentContainer>
-          <ContentImg src={valuableImage} alt="valuable" />
-          <TextWrapper>
-            <BoldText>가치 있는 소비하기</BoldText>
-            <Text>나를 성장시킬 수 있는</Text>
-            <Text>돈이 아깝지 않은 소비만 하기</Text>
-          </TextWrapper>
-        </ContentContainer>
-        <ContentContainer>
-          <ContentImg src={stressfuImage} alt="stressful" />
-          <TextWrapper>
-            <BoldText>충동적인 홧김소비는 그만!</BoldText>
-            <Text>아, 조금만 참을 걸...</Text>
-            <Text>다음날 후회했던 소비 줄이기</Text>
-          </TextWrapper>
-        </ContentContainer>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <TitleBox>당신의 절약과 소비,</TitleBox>
+          <TitleText>GASOMANN이 연결합니다</TitleText>
+        </TitleContainer>
+        <DotCircle className={isVisible && 'animation'} src={dotCircle} alt="dot circle" />
+        <GasomannCircle src={gasomannCircle} alt="gasomann circle" />
+        <Line className={isVisible && 'animation'} />
+        <BodyContainer ref={setRef} className={isVisible && 'animation'}>
+          <ContentContainer>
+            <ContentImg src={valuableImage} alt="valuable" />
+            <TextWrapper>
+              <BoldText>가치 있는 소비하기</BoldText>
+              <Text>나를 성장시킬 수 있는</Text>
+              <Text>돈이 아깝지 않은 소비만 하기</Text>
+            </TextWrapper>
+          </ContentContainer>
+          <ContentContainer>
+            <ContentImg src={stressfuImage} alt="stressful" />
+            <TextWrapper>
+              <BoldText>충동적인 홧김소비는 그만!</BoldText>
+              <Text>아, 조금만 참을 걸...</Text>
+              <Text>다음날 후회했던 소비 줄이기</Text>
+            </TextWrapper>
+          </ContentContainer>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+`;
 
 const MainContainer = styled.div`
   position: relative;

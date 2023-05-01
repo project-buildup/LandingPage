@@ -8,26 +8,33 @@ export default function PC_Value_First() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <BodyContainer ref={setRef}>
-        <TitleContainer className={isVisible && 'animation'}>
-          <TitleBox>
-            <TitleBoxText>STEP 01</TitleBoxText>
-          </TitleBox>
-          <TitleText>GASOMANN에서 나에게</TitleText>
-          <TitleTextWrapper>
-            <TitleText>필요한 가치소비를&nbsp;</TitleText>
-            <TitleBlueText>추천받기</TitleBlueText>
-          </TitleTextWrapper>
-          <TitleContentText>검증과정을 통해 후회하지 않을</TitleContentText>
-          <TitleContentText>가치있는 소비만 추천해요!</TitleContentText>
-        </TitleContainer>
-        <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <LikeIcon className={isVisible && 'animation'} src={likeIcon} alt="like icon" />
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer ref={setRef}>
+          <TitleContainer className={isVisible && 'animation'}>
+            <TitleBox>
+              <TitleBoxText>STEP 01</TitleBoxText>
+            </TitleBox>
+            <TitleText>GASOMANN에서 나에게</TitleText>
+            <TitleTextWrapper>
+              <TitleText>필요한 가치소비를&nbsp;</TitleText>
+              <TitleBlueText>추천받기</TitleBlueText>
+            </TitleTextWrapper>
+            <TitleContentText>검증과정을 통해 후회하지 않을</TitleContentText>
+            <TitleContentText>가치있는 소비만 추천해요!</TitleContentText>
+          </TitleContainer>
+          <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
+          <LikeIcon className={isVisible && 'animation'} src={likeIcon} alt="like icon" />
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

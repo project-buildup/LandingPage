@@ -9,23 +9,30 @@ export default function PC_Fifth({ selected, setSelected }) {
   };
 
   return (
-    <MainContainer>
-      <TitleContainer>
-        <TitleBox>POINT 02</TitleBox>
-        <TitleText>돈 잘 모으고, 잘 쓰는 일은</TitleText>
-        <TitleText>GASOMANN에게 맡겨주세요</TitleText>
-      </TitleContainer>
-      <BodyContainer>
-        <SelectContainer className={selected === 'saving' && 'selected'} onClick={() => setSelected('saving')}>
-          <Text>절약 챌린지</Text>
-        </SelectContainer>
-        <SelectContainer className={selected === 'value' && 'selected'} onClick={() => setSelected('value')}>
-          <Text>가치소비 추천</Text>
-        </SelectContainer>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <TitleBox>POINT 02</TitleBox>
+          <TitleText>돈 잘 모으고, 잘 쓰는 일은</TitleText>
+          <TitleText>GASOMANN에게 맡겨주세요</TitleText>
+        </TitleContainer>
+        <BodyContainer>
+          <SelectContainer className={selected === 'saving' && 'selected'} onClick={() => setSelected('saving')}>
+            <Text>절약 챌린지</Text>
+          </SelectContainer>
+          <SelectContainer className={selected === 'value' && 'selected'} onClick={() => setSelected('value')}>
+            <Text>가치소비 추천</Text>
+          </SelectContainer>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

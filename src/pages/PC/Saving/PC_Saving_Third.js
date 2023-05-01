@@ -20,38 +20,46 @@ export default function PC_Saving_Third() {
   }, [isVisible]);
 
   return (
-    <MainContainer>
-      <BodyContainer ref={setRef}>
-        <TitleContainer className={isVisible && 'animation'}>
-          <TitleBox>
-            <TitleBoxText>STEP 02</TitleBoxText>
-          </TitleBox>
-          <TitleText>절약할 때마다</TitleText>
-          <TitleText>절약계좌에</TitleText>
-          <TitleTextWrapper>
-            <TitleText>절약금액&nbsp;</TitleText>
-            <TitleBlueText>송금하기</TitleBlueText>
-          </TitleTextWrapper>
-          <TitleContentText>내가 주로 쓰던 뱅킹앱으로</TitleContentText>
-          <TitleContentText>간단하게 송금할 수 있어요!</TitleContentText>
-          <IconContainer>
-            <Icon id="kakaopay" className={isVisible && 'animation'} src={kakaopayIcon} alt="texi challenge" />
-            <Icon id="toss" className={isVisible && 'animation'} src={tossIcon} alt="delivery challenge" />
-            <Icon id="banksalad" className={isVisible && 'animation'} src={banksaladIcon} alt="delivery challenge" />
-          </IconContainer>
-        </TitleContainer>
-        <VideoContainer className={isVisible && 'animation'}>
-          <RemitVideo>
-            <video ref={videoRef} muted loop width="265px">
-              <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
-            </video>
-          </RemitVideo>
-          <VideoWrapper src={videoWrapper} alt="videoWrapper" />
-        </VideoContainer>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer ref={setRef}>
+          <TitleContainer className={isVisible && 'animation'}>
+            <TitleBox>
+              <TitleBoxText>STEP 02</TitleBoxText>
+            </TitleBox>
+            <TitleText>절약할 때마다</TitleText>
+            <TitleText>절약계좌에</TitleText>
+            <TitleTextWrapper>
+              <TitleText>절약금액&nbsp;</TitleText>
+              <TitleBlueText>송금하기</TitleBlueText>
+            </TitleTextWrapper>
+            <TitleContentText>내가 주로 쓰던 뱅킹앱으로</TitleContentText>
+            <TitleContentText>간단하게 송금할 수 있어요!</TitleContentText>
+            <IconContainer>
+              <Icon id="kakaopay" className={isVisible && 'animation'} src={kakaopayIcon} alt="texi challenge" />
+              <Icon id="toss" className={isVisible && 'animation'} src={tossIcon} alt="delivery challenge" />
+              <Icon id="banksalad" className={isVisible && 'animation'} src={banksaladIcon} alt="delivery challenge" />
+            </IconContainer>
+          </TitleContainer>
+          <VideoContainer className={isVisible && 'animation'}>
+            <RemitVideo>
+              <video ref={videoRef} muted loop width="265px">
+                <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
+              </video>
+            </RemitVideo>
+            <VideoWrapper src={videoWrapper} alt="videoWrapper" />
+          </VideoContainer>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9fa;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

@@ -8,33 +8,41 @@ export default function PC_Fourth() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <TitleContainer>
-        <TitleBox>MEANING</TitleBox>
-        <TitleText>홧김소비와 가치소비란?</TitleText>
-      </TitleContainer>
-      <BodyContainer ref={setRef}>
-        <CardContainer id="left" className={isVisible && 'animation'}>
-          <CircleImg src={coffeeImage} alt="coffee" />
-          <TextWrapper>
-            <BoldText>홧김소비</BoldText>
-            <Text>순간적인 유혹에 의한 불필요한 소비</Text>
-            <BlueText>습관적으로 마시는 커피 · 충동적 쇼핑 등</BlueText>
-          </TextWrapper>
-        </CardContainer>
-        <CardContainer id="right" className={isVisible && 'animation'}>
-          <CircleImg src={healthImage} alt="health" />
-          <TextWrapper>
-            <BoldText>가치소비</BoldText>
-            <Text>소비 주체에 귀중한 경험</Text>
-            <Text>및 유용한 자산이 되는 소비</Text>
-            <BlueText>헬스케어 · 자기개발 · 취미 등</BlueText>
-          </TextWrapper>
-        </CardContainer>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <TitleBox>MEANING</TitleBox>
+          <TitleText>홧김소비와 가치소비란?</TitleText>
+        </TitleContainer>
+        <BodyContainer ref={setRef}>
+          <CardContainer id="left" className={isVisible && 'animation'}>
+            <CircleImg src={coffeeImage} alt="coffee" />
+            <TextWrapper>
+              <BoldText>홧김소비</BoldText>
+              <Text>순간적인 유혹에 의한 불필요한 소비</Text>
+              <BlueText>습관적으로 마시는 커피 · 충동적 쇼핑 등</BlueText>
+            </TextWrapper>
+          </CardContainer>
+          <CardContainer id="right" className={isVisible && 'animation'}>
+            <CircleImg src={healthImage} alt="health" />
+            <TextWrapper>
+              <BoldText>가치소비</BoldText>
+              <Text>소비 주체에 귀중한 경험</Text>
+              <Text>및 유용한 자산이 되는 소비</Text>
+              <BlueText>헬스케어 · 자기개발 · 취미 등</BlueText>
+            </TextWrapper>
+          </CardContainer>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #eff6ff;
+`;
 
 const MainContainer = styled.div`
   position: relative;

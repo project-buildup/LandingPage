@@ -9,27 +9,35 @@ export default function PC_Value_Second() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <BodyContainer ref={setRef}>
-        <TitleContainer className={isVisible && 'animation'}>
-          <TitleBox>
-            <TitleBoxText>STEP 02</TitleBoxText>
-          </TitleBox>
-          <TitleText>쿠폰별 달성금액 절약</TitleText>
-          <TitleTextWrapper>
-            <TitleText>성공하고 가치소비&nbsp;</TitleText>
-            <TitleBlueText>할인받기</TitleBlueText>
-          </TitleTextWrapper>
-          <TitleContentText>쿠폰 별 일정금액 절약만 성공하면,</TitleContentText>
-          <TitleContentText>할인쿠폰까지 제공해줘요!</TitleContentText>
-        </TitleContainer>
-        <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <CheckIcon className={isVisible && 'animation'} src={checkIcon} alt="like icon" />
-        <CouponImg className={isVisible && 'animation'} src={couponImage} alt="coupon" />
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer ref={setRef}>
+          <TitleContainer className={isVisible && 'animation'}>
+            <TitleBox>
+              <TitleBoxText>STEP 02</TitleBoxText>
+            </TitleBox>
+            <TitleText>쿠폰별 달성금액 절약</TitleText>
+            <TitleTextWrapper>
+              <TitleText>성공하고 가치소비&nbsp;</TitleText>
+              <TitleBlueText>할인받기</TitleBlueText>
+            </TitleTextWrapper>
+            <TitleContentText>쿠폰 별 일정금액 절약만 성공하면,</TitleContentText>
+            <TitleContentText>할인쿠폰까지 제공해줘요!</TitleContentText>
+          </TitleContainer>
+          <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
+          <CheckIcon className={isVisible && 'animation'} src={checkIcon} alt="like icon" />
+          <CouponImg className={isVisible && 'animation'} src={couponImage} alt="coupon" />
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9fa;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

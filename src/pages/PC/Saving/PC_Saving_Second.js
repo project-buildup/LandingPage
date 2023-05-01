@@ -9,32 +9,39 @@ export default function PC_Saving_Second() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <BodyContainer ref={setRef}>
-        <TitleContainer className={isVisible && 'animation'}>
-          <TitleBox>
-            <TitleBoxText>STEP 01</TitleBoxText>
-          </TitleBox>
-          <TitleText>내가 참여하고싶은</TitleText>
-          <TitleTextWrapper>
-            <TitleText>챌린지&nbsp;</TitleText>
-            <TitleBlueText>선택하기</TitleBlueText>
-          </TitleTextWrapper>
-          <TitleContentText>다양한 챌린지 선택의 폭으로</TitleContentText>
-          <TitleContentText>지겹지않게 도전할 수 있어요!</TitleContentText>
-        </TitleContainer>
-        <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <ChallengeImg id="texi" className={isVisible && 'animation'} src={challengeTexiImage} alt="texi challenge" />
-        <ChallengeImg
-          id="delivery"
-          className={isVisible && 'animation'}
-          src={challengeDeliveryImage}
-          alt="delivery challenge"
-        />
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer ref={setRef}>
+          <TitleContainer className={isVisible && 'animation'}>
+            <TitleBox>
+              <TitleBoxText>STEP 01</TitleBoxText>
+            </TitleBox>
+            <TitleText>내가 참여하고싶은</TitleText>
+            <TitleTextWrapper>
+              <TitleText>챌린지&nbsp;</TitleText>
+              <TitleBlueText>선택하기</TitleBlueText>
+            </TitleTextWrapper>
+            <TitleContentText>다양한 챌린지 선택의 폭으로</TitleContentText>
+            <TitleContentText>지겹지않게 도전할 수 있어요!</TitleContentText>
+          </TitleContainer>
+          <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
+          <ChallengeImg id="texi" className={isVisible && 'animation'} src={challengeTexiImage} alt="texi challenge" />
+          <ChallengeImg
+            id="delivery"
+            className={isVisible && 'animation'}
+            src={challengeDeliveryImage}
+            alt="delivery challenge"
+          />
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

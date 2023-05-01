@@ -3,19 +3,27 @@ import styled from 'styled-components';
 import targetImage from '../../assets/targetImage.png';
 export default function PC_Sixth() {
   return (
-    <MainContainer>
-      <TitleContainer>
-        <TitleBox>MISSION</TitleBox>
-        <TitleText>GASOMANN의 최종 목표는</TitleText>
-        <BoldText>청년들의 소비권익 향상이에요</BoldText>
-        <Line />
-        <SmallText>청년들을 위한 금융교육 콘텐츠가 곧 찾아옵니다</SmallText>
-      </TitleContainer>
-      <BigText>COMMING SOON</BigText>
-      <TargetImg src={targetImage} alt="target" />
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <TitleBox>MISSION</TitleBox>
+          <TitleText>GASOMANN의 최종 목표는</TitleText>
+          <BoldText>청년들의 소비권익 향상이에요</BoldText>
+          <Line />
+          <SmallText>청년들을 위한 금융교육 콘텐츠가 곧 찾아옵니다</SmallText>
+        </TitleContainer>
+        <BigText>COMMING SOON</BigText>
+        <TargetImg src={targetImage} alt="target" />
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+`;
 
 const MainContainer = styled.div`
   position: relative;

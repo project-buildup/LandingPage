@@ -8,26 +8,34 @@ export default function PC_Saving_Fourth() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <BodyContainer ref={setRef}>
-        <TitleContainer className={isVisible && 'animation'}>
-          <TitleBox>
-            <TitleBoxText>STEP 03</TitleBoxText>
-          </TitleBox>
-          <TitleText>나의 절약 업적을</TitleText>
-          <TitleTextWrapper>
-            <TitleBlueText>한 번에 확인</TitleBlueText>
-            <TitleText>해보세요</TitleText>
-          </TitleTextWrapper>
-          <TitleContentText>절약을 했다는 것</TitleContentText>
-          <TitleContentText>그 자체만으로 뿌듯해져요</TitleContentText>
-        </TitleContainer>
-        <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-        <ArchivingImg className={isVisible && 'animation'} src={archivingCardImage} alt="archiving" />
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer ref={setRef}>
+          <TitleContainer className={isVisible && 'animation'}>
+            <TitleBox>
+              <TitleBoxText>STEP 03</TitleBoxText>
+            </TitleBox>
+            <TitleText>나의 절약 업적을</TitleText>
+            <TitleTextWrapper>
+              <TitleBlueText>한 번에 확인</TitleBlueText>
+              <TitleText>해보세요</TitleText>
+            </TitleTextWrapper>
+            <TitleContentText>절약을 했다는 것</TitleContentText>
+            <TitleContentText>그 자체만으로 뿌듯해져요</TitleContentText>
+          </TitleContainer>
+          <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
+          <ArchivingImg className={isVisible && 'animation'} src={archivingCardImage} alt="archiving" />
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #eff6ff;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

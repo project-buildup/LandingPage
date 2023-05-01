@@ -13,55 +13,63 @@ export default function PC_Second() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <TitleContainer>
-        <TitleBox>MEANING</TitleBox>
-        <TitleText>
-          절약이&nbsp;
-          <BlueText>합리적인 소비</BlueText>로
-        </TitleText>
-        <TitleText>이어지는 솔루션</TitleText>
-      </TitleContainer>
-      <BodyContainer>
-        <LeftTextWrapper>
-          <LeftText>절약으로</LeftText>
-          <LeftText>돈을 잘 모으고</LeftText>
-        </LeftTextWrapper>
-        <ImageContainer>
-          <CircleImg src={circleImage} alt="circle" />
-          <ArrowContainer>
-            <ArrowWrapper>
-              <ArrowHiddenWrapper className={isVisible && 'animation'}>
-                <ArrowImg src={blueArrowDown} alt="arrow" />
-              </ArrowHiddenWrapper>
-            </ArrowWrapper>
-          </ArrowContainer>
-          <ArrowContainer2>
-            <ArrowWrapper2>
-              <ArrowHiddenWrapper2 ref={setRef} className={isVisible && 'animation'}>
-                <ArrowImg2 src={blueArrowUp} alt="arrow" />
-              </ArrowHiddenWrapper2>
-            </ArrowWrapper2>
-          </ArrowContainer2>
-          <RedBackIcon src={redBackIcon} alt="red back" />
-          <MoneyIcon src={moneyIcon} alt="money" />
-          <PhoneImgWrapper>
-            <PhoneImg src={phoneImage} alt="phone" />
-          </PhoneImgWrapper>
-        </ImageContainer>
-        <RightContainer>
-          <RightText>현명하게</RightText>
-          <RightText>잘 소비하는 일</RightText>
-          <TriangleIcon src={triangleIcon} alt="triangle" />
-          <RightTextBox>
-            <BoxText>헬스 · 마인드케어</BoxText>
-            <BoxText>자기 계발 · 귀중한 경험</BoxText>
-          </RightTextBox>
-        </RightContainer>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <TitleBox>MEANING</TitleBox>
+          <TitleText>
+            절약이&nbsp;
+            <BlueText>합리적인 소비</BlueText>로
+          </TitleText>
+          <TitleText>이어지는 솔루션</TitleText>
+        </TitleContainer>
+        <BodyContainer>
+          <LeftTextWrapper>
+            <LeftText>절약으로</LeftText>
+            <LeftText>돈을 잘 모으고</LeftText>
+          </LeftTextWrapper>
+          <ImageContainer>
+            <CircleImg src={circleImage} alt="circle" />
+            <ArrowContainer>
+              <ArrowWrapper>
+                <ArrowHiddenWrapper className={isVisible && 'animation'}>
+                  <ArrowImg src={blueArrowDown} alt="arrow" />
+                </ArrowHiddenWrapper>
+              </ArrowWrapper>
+            </ArrowContainer>
+            <ArrowContainer2>
+              <ArrowWrapper2>
+                <ArrowHiddenWrapper2 ref={setRef} className={isVisible && 'animation'}>
+                  <ArrowImg2 src={blueArrowUp} alt="arrow" />
+                </ArrowHiddenWrapper2>
+              </ArrowWrapper2>
+            </ArrowContainer2>
+            <RedBackIcon src={redBackIcon} alt="red back" />
+            <MoneyIcon src={moneyIcon} alt="money" />
+            <PhoneImgWrapper>
+              <PhoneImg src={phoneImage} alt="phone" />
+            </PhoneImgWrapper>
+          </ImageContainer>
+          <RightContainer>
+            <RightText>현명하게</RightText>
+            <RightText>잘 소비하는 일</RightText>
+            <TriangleIcon src={triangleIcon} alt="triangle" />
+            <RightTextBox>
+              <BoxText>헬스 · 마인드케어</BoxText>
+              <BoxText>자기 계발 · 귀중한 경험</BoxText>
+            </RightTextBox>
+          </RightContainer>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

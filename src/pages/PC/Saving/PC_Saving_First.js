@@ -9,46 +9,53 @@ import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 export default function PC_Saving_First() {
   const [setRef, isVisible] = useAnimationOnScroll();
   return (
-    <MainContainer>
-      <ConsumeContainer ref={setRef} className={isVisible && 'animation'}>
-        <ConsumeWrapper>
-          <CircleImgWrapper>
-            <CircleImg src={hamburgerIcon} alt="hamburgerIcon" />
-          </CircleImgWrapper>
-          <ConsumeTextWrapper>
-            <ConsumeText>홧김에</ConsumeText>
-            <ConsumeText>시켜먹는 야식</ConsumeText>
-          </ConsumeTextWrapper>
-        </ConsumeWrapper>
-        <ConsumeWrapper>
-          <CircleImgWrapper>
-            <CircleImg src={coffeeIcon} alt="coffeeIcon" />
-          </CircleImgWrapper>
-          <ConsumeTextWrapper>
-            <ConsumeText>습관적으로</ConsumeText>
-            <ConsumeText>마시는 커피</ConsumeText>
-          </ConsumeTextWrapper>
-        </ConsumeWrapper>
-        <ConsumeWrapper>
-          <CircleImgWrapper>
-            <CircleImg src={drinkIcon} alt="drinkIcon" />
-          </CircleImgWrapper>
-          <ConsumeTextWrapper>
-            <ConsumeText>끊임없는</ConsumeText>
-            <ConsumeText>번개 모임과 술자리</ConsumeText>
-          </ConsumeTextWrapper>
-        </ConsumeWrapper>
-      </ConsumeContainer>
-      <TextBoxWrapper className={isVisible && 'animation'}>
-        <TriangleIcon src={triangleIcon} alt="triangle" />
-        <TextBox>
-          <BoxText>이러한 소비로 돈 아깝지 않으셨나요?</BoxText>
-          <BoxBlueText>GASOMANN 챌린지기능으로 절약해요!</BoxBlueText>
-        </TextBox>
-      </TextBoxWrapper>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <ConsumeContainer ref={setRef} className={isVisible && 'animation'}>
+          <ConsumeWrapper>
+            <CircleImgWrapper>
+              <CircleImg src={hamburgerIcon} alt="hamburgerIcon" />
+            </CircleImgWrapper>
+            <ConsumeTextWrapper>
+              <ConsumeText>홧김에</ConsumeText>
+              <ConsumeText>시켜먹는 야식</ConsumeText>
+            </ConsumeTextWrapper>
+          </ConsumeWrapper>
+          <ConsumeWrapper>
+            <CircleImgWrapper>
+              <CircleImg src={coffeeIcon} alt="coffeeIcon" />
+            </CircleImgWrapper>
+            <ConsumeTextWrapper>
+              <ConsumeText>습관적으로</ConsumeText>
+              <ConsumeText>마시는 커피</ConsumeText>
+            </ConsumeTextWrapper>
+          </ConsumeWrapper>
+          <ConsumeWrapper>
+            <CircleImgWrapper>
+              <CircleImg src={drinkIcon} alt="drinkIcon" />
+            </CircleImgWrapper>
+            <ConsumeTextWrapper>
+              <ConsumeText>끊임없는</ConsumeText>
+              <ConsumeText>번개 모임과 술자리</ConsumeText>
+            </ConsumeTextWrapper>
+          </ConsumeWrapper>
+        </ConsumeContainer>
+        <TextBoxWrapper className={isVisible && 'animation'}>
+          <TriangleIcon src={triangleIcon} alt="triangle" />
+          <TextBox>
+            <BoxText>이러한 소비로 돈 아깝지 않으셨나요?</BoxText>
+            <BoxBlueText>GASOMANN 챌린지기능으로 절약해요!</BoxBlueText>
+          </TextBox>
+        </TextBoxWrapper>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

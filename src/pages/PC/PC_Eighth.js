@@ -4,18 +4,27 @@ import eighthBackgroundImage from '../../assets/eighthBackgroundImage.png';
 
 export default function PC_Eighth() {
   return (
-    <MainContainer>
-      <TitleContainer>
-        <Title>CONTACT US</Title>
-        <TitleText>궁금한 점이 있나요?</TitleText>
-        <MailBox>
-          <MailText>MAIL</MailText>
-          <MailAddress>contact@projectbuildup.io</MailAddress>
-        </MailBox>
-      </TitleContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <Title>CONTACT US</Title>
+          <TitleText>궁금한 점이 있나요?</TitleText>
+          <MailBox>
+            <MailText>MAIL</MailText>
+            <MailAddress>contact@projectbuildup.io</MailAddress>
+          </MailBox>
+        </TitleContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-image: url(${eighthBackgroundImage});
+  background-size: 100vw 395px;
+`;
 
 const MainContainer = styled.div`
   position: relative;
@@ -23,8 +32,6 @@ const MainContainer = styled.div`
   height: 395px;
   display: flex;
   flex-direction: column;
-  background-image: url(${eighthBackgroundImage});
-  background-size: 1440px 395px;
 `;
 
 const TitleContainer = styled.div`
@@ -35,7 +42,6 @@ const TitleContainer = styled.div`
 `;
 
 const Title = styled.div`
-  width: 125px;
   height: 24px;
   margin-bottom: 10px;
   display: flex;

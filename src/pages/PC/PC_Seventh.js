@@ -9,28 +9,36 @@ import partner6 from '../../assets/partner6.png';
 
 export default function PC_Seventh() {
   return (
-    <MainContainer>
-      <TitleContainer>
-        <TitleBox>PARTNER</TitleBox>
-        <TitleText>GASOMANN을 만드는 프로젝트빌드업은</TitleText>
-        <TitleText>이런 분들과 함께하고 있어요</TitleText>
-      </TitleContainer>
-      <PartnerContainer>
-        <PartnerWrapper className="line1">
-          <PartnerImg className="partner1" src={partner1} alt="partner1" />
-          <PartnerImg className="partner2" src={partner2} alt="partner2" />
-          <PartnerImg className="partner3" src={partner3} alt="partner3" />
-        </PartnerWrapper>
-        <PartnerWrapper className="line2">
-          <PartnerImg className="partner4" src={partner4} alt="partner4" />
-          <PartnerImg className="partner5" src={partner5} alt="partner5" />
-          <PartnerImg className="partner6" src={partner6} alt="partner6" />
-        </PartnerWrapper>
-      </PartnerContainer>
-      <QuestionButton>파트너 및 제휴 문의하기</QuestionButton>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <TitleContainer>
+          <TitleBox>PARTNER</TitleBox>
+          <TitleText>GASOMANN을 만드는 프로젝트빌드업은</TitleText>
+          <TitleText>이런 분들과 함께하고 있어요</TitleText>
+        </TitleContainer>
+        <PartnerContainer>
+          <PartnerWrapper className="line1">
+            <PartnerImg className="partner1" src={partner1} alt="partner1" />
+            <PartnerImg className="partner2" src={partner2} alt="partner2" />
+            <PartnerImg className="partner3" src={partner3} alt="partner3" />
+          </PartnerWrapper>
+          <PartnerWrapper className="line2">
+            <PartnerImg className="partner4" src={partner4} alt="partner4" />
+            <PartnerImg className="partner5" src={partner5} alt="partner5" />
+            <PartnerImg className="partner6" src={partner6} alt="partner6" />
+          </PartnerWrapper>
+        </PartnerContainer>
+        <QuestionButton>파트너 및 제휴 문의하기</QuestionButton>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9fa;
+`;
 
 const MainContainer = styled.div`
   position: relative;

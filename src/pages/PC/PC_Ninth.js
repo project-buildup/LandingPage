@@ -6,37 +6,45 @@ import mailIcon from '../../assets/mailIcon.png';
 
 export default function PC_Ninth() {
   return (
-    <MainContainer>
-      <BodyContainer>
-        <Logo src={whiteLogo} alt="logo" />
-        <TextContainer>
-          <TextWrapper className="box1">
-            <Text>(주)프로젝트빌드업 | 대표 하동균</Text>
-            <Text>사업자등록번호 166-86-02772</Text>
-          </TextWrapper>
-          <TextWrapper className="box2">
-            <IconTextWrapper>
-              <Icon src={locationIcon} alt="location" />
-              <Text>대구광역시 북구 대학로 80 (산격동, 경북대학교 글로벌프라자 101호)</Text>
-            </IconTextWrapper>
-            <IconTextWrapper>
-              <Icon src={mailIcon} alt="mail" />
-              <Text>contact@projectbuildup.io</Text>
-            </IconTextWrapper>
-          </TextWrapper>
-          <TextWrapper className="box3">
-            <Text>SNS</Text>
-            <TextBar>|</TextBar>
-            <Text>채용</Text>
-            <TextBar>|</TextBar>
-            <Text>이용약관 및 개인정보처리방침</Text>
-          </TextWrapper>
-        </TextContainer>
-        <Text className="copyright">Copyright PROJECT BUILDUP, All Rights Reserved</Text>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer>
+          <Logo src={whiteLogo} alt="logo" />
+          <TextContainer>
+            <TextWrapper className="box1">
+              <Text>(주)프로젝트빌드업 | 대표 하동균</Text>
+              <Text>사업자등록번호 166-86-02772</Text>
+            </TextWrapper>
+            <TextWrapper className="box2">
+              <IconTextWrapper>
+                <Icon src={locationIcon} alt="location" />
+                <Text>대구광역시 북구 대학로 80 (산격동, 경북대학교 글로벌프라자 101호)</Text>
+              </IconTextWrapper>
+              <IconTextWrapper>
+                <Icon src={mailIcon} alt="mail" />
+                <Text>contact@projectbuildup.io</Text>
+              </IconTextWrapper>
+            </TextWrapper>
+            <TextWrapper className="box3">
+              <Text>SNS</Text>
+              <TextBar>|</TextBar>
+              <Text>채용</Text>
+              <TextBar>|</TextBar>
+              <Text>이용약관 및 개인정보처리방침</Text>
+            </TextWrapper>
+          </TextContainer>
+          <Text className="copyright">Copyright PROJECT BUILDUP, All Rights Reserved</Text>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #242627;
+`;
 
 const MainContainer = styled.div`
   position: relative;

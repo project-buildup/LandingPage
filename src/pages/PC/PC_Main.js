@@ -8,42 +8,51 @@ import mainAppImage from '../../assets/mainAppImage.png';
 
 export default function PC_Main() {
   return (
-    <MainContainer>
-      <NavBarContainer>
-        <LogoImage src={gasomannLogoWhite} alt="gasomann logo" />
-        <LinkContainer>
-          <NavBarText>ABOUT</NavBarText>
-          <NavBarText>CONTACT</NavBarText>
-          <NavBarText>BLOG</NavBarText>
-          <AppDownloadButton>사전 예약</AppDownloadButton>
-        </LinkContainer>
-      </NavBarContainer>
-      <BodyContainer>
-        <LeftSectionContainer>
-          <TitleText>당신의 소비를 가치있게</TitleText>
-          <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
-          <SubtitleText>GASOMANN</SubtitleText>
-          <DownloadText>GASOMANN 앱 다운로드</DownloadText>
-          <DownloadButtonContainer>
-            <DownloadButton>
-              <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
-              <DownloadButtonText>Google Play</DownloadButtonText>
-            </DownloadButton>
-            <DownloadButton>
-              <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
-              <DownloadButtonText>App Store</DownloadButtonText>
-            </DownloadButton>
-          </DownloadButtonContainer>
-        </LeftSectionContainer>
-        <Line />
-        <RightSectionContainer>
-          <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
-          <MainAppImage src={mainAppImage} alt="gasomann app logo" />
-        </RightSectionContainer>
-      </BodyContainer>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <NavBarContainer>
+          <LogoImage src={gasomannLogoWhite} alt="gasomann logo" />
+          <LinkContainer>
+            <NavBarText>ABOUT</NavBarText>
+            <NavBarText>CONTACT</NavBarText>
+            <NavBarText>BLOG</NavBarText>
+            <AppDownloadButton>사전 예약</AppDownloadButton>
+          </LinkContainer>
+        </NavBarContainer>
+        <BodyContainer>
+          <LeftSectionContainer>
+            <TitleText>당신의 소비를 가치있게</TitleText>
+            <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
+            <SubtitleText>GASOMANN</SubtitleText>
+            <DownloadText>GASOMANN 앱 다운로드</DownloadText>
+            <DownloadButtonContainer>
+              <DownloadButton>
+                <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
+                <DownloadButtonText>Google Play</DownloadButtonText>
+              </DownloadButton>
+              <DownloadButton>
+                <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
+                <DownloadButtonText>App Store</DownloadButtonText>
+              </DownloadButton>
+            </DownloadButtonContainer>
+          </LeftSectionContainer>
+          <Line />
+          <RightSectionContainer>
+            <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
+            <MainAppImage src={mainAppImage} alt="gasomann app logo" />
+          </RightSectionContainer>
+        </BodyContainer>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #2484f3;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;

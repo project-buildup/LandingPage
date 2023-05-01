@@ -9,33 +9,41 @@ export default function PC_Value_Third() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
-    <MainContainer>
-      <BodyContainer ref={setRef}>
-        <TitleContainer className={isVisible && 'animation'}>
-          <TitleBox>
-            <TitleBoxText>SERVICE</TitleBoxText>
-          </TitleBox>
-          <TitleText>현재 대구지역에서만</TitleText>
-          <TitleText>지원하고 있어요</TitleText>
-          <TitleContentWrapper>
-            <TitleContentText>다른지역 오프라인</TitleContentText>
-            <TitleContentText>가치소비는 조금만 기다려주세요</TitleContentText>
-          </TitleContentWrapper>
-          <PartnerButton>제휴업체 확인하기</PartnerButton>
-        </TitleContainer>
-        <MapImg className={isVisible && 'animation'} src={mapImage} alt="map" />
-      </BodyContainer>
-      <TextBoxWrapper className={isVisible && 'animation'}>
-        <TriangleIcon src={triangleIcon} alt="triangle" />
-        <TextBox>
-          <BoxText>부산지역과 온라인에서도 GASOMANN의</BoxText>
-          <BoxText>가치소비를 곧 만나볼 수 있어요!</BoxText>
-          <OkayImg src={okayImage} alt="okay" />
-        </TextBox>
-      </TextBoxWrapper>
-    </MainContainer>
+    <ContainerWrapper>
+      <MainContainer>
+        <BodyContainer ref={setRef}>
+          <TitleContainer className={isVisible && 'animation'}>
+            <TitleBox>
+              <TitleBoxText>SERVICE</TitleBoxText>
+            </TitleBox>
+            <TitleText>현재 대구지역에서만</TitleText>
+            <TitleText>지원하고 있어요</TitleText>
+            <TitleContentWrapper>
+              <TitleContentText>다른지역 오프라인</TitleContentText>
+              <TitleContentText>가치소비는 조금만 기다려주세요</TitleContentText>
+            </TitleContentWrapper>
+            <PartnerButton>제휴업체 확인하기</PartnerButton>
+          </TitleContainer>
+          <MapImg className={isVisible && 'animation'} src={mapImage} alt="map" />
+        </BodyContainer>
+        <TextBoxWrapper className={isVisible && 'animation'}>
+          <TriangleIcon src={triangleIcon} alt="triangle" />
+          <TextBox>
+            <BoxText>부산지역과 온라인에서도 GASOMANN의</BoxText>
+            <BoxText>가치소비를 곧 만나볼 수 있어요!</BoxText>
+            <OkayImg src={okayImage} alt="okay" />
+          </TextBox>
+        </TextBoxWrapper>
+      </MainContainer>
+    </ContainerWrapper>
   );
 }
+const ContainerWrapper = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #eff6ff;
+`;
 
 const MainContainer = styled.div`
   width: 1440px;
@@ -157,7 +165,6 @@ const TextBox = styled.div`
 `;
 
 const BoxText = styled.div`
-  width: 400px;
   height: 31px;
   margin-left: 212px;
   font-size: 24px;
