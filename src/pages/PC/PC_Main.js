@@ -19,14 +19,14 @@ export default function PC_Main() {
             <AppDownloadButton>사전 예약</AppDownloadButton>
           </LinkContainer>
         </NavBarContainer>
+
         <BodyContainer>
           <LeftSectionContainer>
+            <Blank />
             <TitleText>당신의 소비를 가치있게</TitleText>
             <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
             <SubtitleText>GASOMANN</SubtitleText>
-            <LineWrapper>
-              <Line />
-            </LineWrapper>
+            <LineWrapper>{window.innerHeight > 640 && <Line />}</LineWrapper>
             <DownloadText>GASOMANN 앱 다운로드</DownloadText>
             <DownloadButtonContainer>
               <DownloadButton>
@@ -52,6 +52,8 @@ export default function PC_Main() {
 const ContainerWrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 100vh;
+  min-height: 640px;
   display: flex;
   justify-content: center;
   background-color: #2484f3;
@@ -59,7 +61,7 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 100vh;
+  height: 100%;
 `;
 
 const NavBarContainer = styled.div`
@@ -115,9 +117,12 @@ const BodyContainer = styled.div`
 
 const LeftSectionContainer = styled.div`
   width: 455px;
-  margin-top: 20.3vh;
 `;
 
+const Blank = styled.div`
+  height: 20.3vh;
+  min-height: 130px;
+`;
 const TitleText = styled.div`
   width: 455px;
   height: 65px;
@@ -148,14 +153,15 @@ const SubtitleText = styled.div`
 const LineWrapper = styled.div`
   position: relative;
   height: 11.26vh;
+  min-height: 65px;
 `;
 
 const Line = styled.div`
   position: absolute;
   top: 53%;
-  right: -72%;
+  right: -74%;
   height: 1px;
-  width: 72vw;
+  width: 74vw;
   background-color: white;
   animation: fadeInLine 1.2s ease-in-out backwards;
   animation-delay: 1.1s;
@@ -217,6 +223,7 @@ const RightSectionContainer = styled.div`
 
 const GasomannAppLogo = styled.img`
   height: 75.25vh;
+  min-height: 482px;
   padding-top: 9px;
   animation: fadeInApp 0.8s backwards;
   animation-delay: 0.6s;
@@ -226,7 +233,7 @@ const MainAppImage = styled.img`
   position: absolute;
   left: 62px;
   height: 81.3vh;
-
+  min-height: 520px;
   animation: fadeInApp 0.8s backwards;
   animation-delay: 1.1s;
 `;
