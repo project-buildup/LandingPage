@@ -46,7 +46,6 @@ const Title = styled.div`
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: white;
   font-family: 'GmarketSans';
   font-size: 16px;
