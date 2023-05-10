@@ -4,7 +4,7 @@ import coffeeImage from '../../assets/coffeeImage.png';
 import healthImage from '../../assets/healthImage.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function PC_Fourth() {
+export default function Mobile_Fourth() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -19,8 +19,10 @@ export default function PC_Fourth() {
             <CircleImg src={coffeeImage} alt="coffee" />
             <TextWrapper>
               <BoldText>홧김소비</BoldText>
-              <Text>순간적인 유혹에 의한 불필요한 소비</Text>
-              <BlueText>습관적으로 마시는 커피 · 충동적 쇼핑 등</BlueText>
+              <Text>순간적인 유혹에 의한</Text>
+              <Text>불필요한 소비</Text>
+              <BlueText>습관적으로 마시는 커피 및</BlueText>
+              <BlueText>충동적 쇼핑 등</BlueText>
             </TextWrapper>
           </CardContainer>
           <CardContainer id="right" className={isVisible && 'animation'}>
@@ -46,8 +48,8 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   position: relative;
-  width: 1440px;
-  height: 897px;
+  width: 360px;
+  height: 621px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -57,12 +59,12 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 120px;
+  margin-top: 71px;
 `;
 
 const TitleBox = styled.div`
-  width: 114px;
-  height: 34px;
+  width: 92px;
+  height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,35 +72,36 @@ const TitleBox = styled.div`
   color: white;
   font-family: 'GmarketSans';
   font-weight: 700;
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 10px;
 `;
 
 const TitleText = styled.div`
-  height: 52px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: black;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
 `;
 
 const BodyContainer = styled.div`
-  margin-top: 50px;
-  width: 860px;
+  margin-top: 40px;
+  width: 328px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 `;
 
 const CardContainer = styled.div`
-  width: 411px;
-  height: 468px;
-  border-radius: 42px;
+  width: 328px;
+  height: 156px;
+  margin-bottom: 15px;
+  border-radius: 20px;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   background-color: white;
   opacity: 0;
@@ -115,33 +118,32 @@ const CardContainer = styled.div`
 `;
 
 const CircleImg = styled.img`
-  width: 222px;
-  height: 222px;
-  border-radius: 111px;
-  margin-top: 46px;
-  margin-bottom: 32px;
+  width: 101px;
+  height: 101px;
+  border-radius: 101px;
+  margin-left: 26px;
 `;
 
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  margin-left: 19px;
 `;
 
 const BoldText = styled.div`
-  height: 32px;
-  font-size: 25px;
+  height: 18px;
+  font-size: 14px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const Text = styled.div`
-  height: 28px;
-  font-size: 20px;
+  height: 18px;
+  font-size: 13px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -149,8 +151,8 @@ const Text = styled.div`
 `;
 
 const BlueText = styled.div`
-  height: 28px;
-  font-size: 20px;
+  height: 18px;
+  font-size: 13px;
   font-weight: 400;
   display: flex;
   align-items: center;

@@ -67,8 +67,8 @@ const MainContainer = styled.div`
 const NavBarContainer = styled.div`
   display: flex;
   height: 71px;
-  padding-left: 4.1vw;
-  padding-right: 5.7vw;
+  padding-left: 59px;
+  padding-right: 82.5px;
   align-items: center;
   justify-content: space-between;
 `;
@@ -111,8 +111,8 @@ const AppDownloadButton = styled.div`
 const BodyContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-left: 9.16vw;
-  padding-right: 13.5vw;
+  padding-left: 132px;
+  padding-right: 195px;
 `;
 
 const LeftSectionContainer = styled.div`
@@ -139,7 +139,6 @@ const TitleText = styled.div`
 
 const SubtitleText = styled.div`
   height: 38px;
-  font-family: 'Pretendard';
   font-size: 24px;
   font-weight: 600;
   color: white;

@@ -13,7 +13,9 @@ export default function PC_Toggle() {
   const [selected, setSelected] = useState('saving');
   return (
     <ContainerWrapper>
-      <PC_Fifth selected={selected} setSelected={setSelected} />
+      <Fifth_Wrapper>
+        <PC_Fifth selected={selected} setSelected={setSelected} />
+      </Fifth_Wrapper>
       {selected === 'saving' ? (
         <div>
           <PC_Saving_First />
@@ -37,4 +39,11 @@ const ContainerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const Fifth_Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #878787;
 `;

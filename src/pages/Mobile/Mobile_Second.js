@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import circleImage from '../../assets/circleImage.png';
+import circleImage from '../../assets/circleImagePhone.png';
 import phoneImage from '../../assets/secondPhoneImage.png';
 import triangleIcon from '../../assets/triangleIconGray.png';
-import blueArrowDown from '../../assets/blueArrowDown.png';
-import blueArrowUp from '../../assets/blueArrowUp.png';
+import blueArrowDown from '../../assets/blueArrowDownPhone.png';
+import blueArrowUp from '../../assets/blueArrowUpPhone.png';
 import redBackIcon from '../../assets/redBackIcon.png';
 import moneyIcon from '../../assets/moneyIcon.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function PC_Second() {
+export default function Mobile_Second() {
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -24,10 +24,10 @@ export default function PC_Second() {
           <TitleText>이어지는 솔루션</TitleText>
         </TitleContainer>
         <BodyContainer>
-          <LeftTextWrapper>
-            <LeftText>절약으로</LeftText>
-            <LeftText>돈을 잘 모으고</LeftText>
-          </LeftTextWrapper>
+          <TopTextWrapper>
+            <TopText>절약으로</TopText>
+            <TopText>돈을 잘 모으고</TopText>
+          </TopTextWrapper>
           <ImageContainer>
             <CircleImg src={circleImage} alt="circle" />
             <ArrowContainer>
@@ -50,15 +50,13 @@ export default function PC_Second() {
               <PhoneImg src={phoneImage} alt="phone" />
             </PhoneImgWrapper>
           </ImageContainer>
-          <RightContainer>
-            <RightText>현명하게</RightText>
-            <RightText>잘 소비하는 일</RightText>
-            <TriangleIcon src={triangleIcon} alt="triangle" />
-            <RightTextBox>
-              <BoxText>헬스 · 마인드케어</BoxText>
-              <BoxText>자기 계발 · 귀중한 경험</BoxText>
-            </RightTextBox>
-          </RightContainer>
+          <BottomText>현명하게</BottomText>
+          <BottomText>잘 소비하는 일</BottomText>
+          <TriangleIcon src={triangleIcon} alt="triangle" />
+          <BottomTextBox>
+            <BoxText>헬스 · 마인드케어</BoxText>
+            <BoxText>자기 계발 · 귀중한 경험</BoxText>
+          </BottomTextBox>
         </BodyContainer>
       </MainContainer>
     </ContainerWrapper>
@@ -72,88 +70,84 @@ const ContainerWrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  width: 1440px;
-  height: 1065px;
+  width: 360px;
+  height: 946px;
   display: flex;
   align-items: center;
   flex-direction: column;
 `;
 
 const TitleContainer = styled.div`
-  padding-top: 135px;
+  padding-top: 122px;
   display: flex;
   align-items: center;
   flex-direction: column;
 `;
 
 const TitleBox = styled.div`
-  width: 114px;
-  height: 34px;
+  width: 92px;
+  height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
   font-family: 'GmarketSans';
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 10px;
 `;
 
 const TitleText = styled.div`
-  height: 52px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
 `;
 
 const BlueText = styled.div`
-  height: 52px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #2484f3;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
 `;
 
 const BodyContainer = styled.div`
   position: relative;
-  margin-top: 5px;
+  margin-top: 55px;
   width: 100vw;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 `;
 
-const LeftTextWrapper = styled.div`
-  position: relative;
-  top: 60px;
-  width: 253px;
+const TopTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-const LeftText = styled.div`
-  height: 45px;
-  font-size: 35px;
+const TopText = styled.div`
+  height: 19px;
+  font-size: 15px;
   font-weight: 700;
   color: white;
-  width: 253px;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const ImageContainer = styled.div`
-  height: 641px;
-  width: 650px;
   position: relative;
+  height: 350px;
+  width: 350px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,140 +156,130 @@ const ImageContainer = styled.div`
 
 const CircleImg = styled.img`
   position: absolute;
-  height: 641px;
+  height: 350px;
 `;
 
 const ArrowContainer = styled.div`
-  width: 536px;
-  height: 641px;
+  width: 260px;
+  height: 350px;
   position: absolute;
   display: flex;
   justify-content: center;
+  /* background-color: red; */
 `;
 const ArrowWrapper = styled.div`
-  width: 550px;
-  height: 312px;
+  width: 260px;
+  height: 171px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
   position: absolute;
+  /* background-color: purple; */
 `;
 
 const ArrowHiddenWrapper = styled.div`
   position: absolute;
-  /* top: -58px; */
-  width: 536px;
-  height: 641px;
+  width: 260px;
+  height: 350px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   &.animation {
-    transform-origin: 49.5% 50%;
+    transform-origin: 50% 50%;
     animation: rotate 1.2s forwards;
     animation-delay: 0s;
   }
 `;
 const ArrowImg = styled.img`
-  width: 536px;
-  height: 254.5px;
+  width: 243px;
+  height: 112px;
   transform: rotate(180deg);
-  margin-bottom: 57px;
+  margin-bottom: 58px;
+  margin-left: 11.5px;
 `;
 
 const ArrowContainer2 = styled.div`
-  width: 536px;
-  height: 641px;
+  width: 260px;
+  height: 350px;
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
 `;
 const ArrowWrapper2 = styled.div`
-  width: 550px;
-  height: 312px;
+  width: 260px;
+  height: 171px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
   position: absolute;
+  bottom: 0;
 `;
 
 const ArrowHiddenWrapper2 = styled.div`
   position: absolute;
-  bottom: 0px;
-  width: 536px;
-  height: 641px;
+  width: 260px;
+  height: 350px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   &.animation {
-    transform-origin: 50.5% 50%;
+    transform-origin: 50% 50%;
     animation: rotate 1.2s forwards;
     animation-delay: 0s;
   }
+  bottom: 0;
 `;
 const ArrowImg2 = styled.img`
-  width: 536px;
-  height: 254.5px;
+  width: 243px;
+  height: 112px;
   transform: rotate(180deg);
-  margin-top: 57px;
+  margin-right: 8px;
+  margin-top: 59px;
 `;
 
 const RedBackIcon = styled.img`
-  height: 112px;
+  height: 50px;
   position: absolute;
-  right: 20px;
-  bottom: 314px;
+  right: 36px;
+  top: 128px;
 `;
 
 const MoneyIcon = styled.img`
-  height: 112px;
+  height: 50px;
   position: absolute;
-  left: 20px;
-  top: 314px;
+  left: 36px;
+  bottom: 128px;
 `;
 
 const PhoneImgWrapper = styled.div`
   position: relative;
-  width: 510px;
-  height: 641px;
+  width: 232px;
+  height: 304px;
   display: flex;
   align-items: flex-end;
 `;
 const PhoneImg = styled.img`
   /* bottom: 0; */
-  height: 514px;
+  height: 235px;
 `;
 
-const RightContainer = styled.div`
-  position: relative;
-  top: 54px;
-  width: 253px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-`;
-
-const RightText = styled.div`
-  height: 45px;
-  font-size: 35px;
+const BottomText = styled.div`
+  height: 19px;
+  font-size: 15px;
   font-weight: 700;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 `;
 const TriangleIcon = styled.img`
-  height: 14px;
-  margin-top: 24px;
+  height: 8px;
+  margin-top: 8px;
 `;
-const RightTextBox = styled.div`
-  width: 253px;
-  height: 100px;
-  border-radius: 30px;
+const BottomTextBox = styled.div`
+  width: 151px;
+  height: 60px;
+  border-radius: 16px;
   background-color: #333333;
   display: flex;
   flex-direction: column;
@@ -304,8 +288,8 @@ const RightTextBox = styled.div`
 `;
 
 const BoxText = styled.div`
-  height: 32.5px;
-  font-size: 20px;
+  height: 16px;
+  font-size: 12px;
   font-weight: 600;
   color: white;
   display: flex;

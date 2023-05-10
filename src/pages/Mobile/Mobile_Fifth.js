@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export default function PC_Fifth({ selected, setSelected }) {
-  PC_Fifth.propTypes = {
+export default function Mobile_Fifth({ selected, setSelected }) {
+  Mobile_Fifth.propTypes = {
     selected: PropTypes.string.isRequired,
     setSelected: PropTypes.func.isRequired,
   };
@@ -35,8 +35,8 @@ const ContainerWrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  width: 1440px;
-  height: 467px;
+  width: 360px;
+  height: 320px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -46,12 +46,12 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 198px;
+  padding-top: 130px;
 `;
 
 const TitleBox = styled.div`
-  width: 110px;
-  height: 34px;
+  width: 88px;
+  height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,23 +59,23 @@ const TitleBox = styled.div`
   color: white;
   font-family: 'GmarketSans';
   font-weight: 700;
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 10px;
 `;
 
 const TitleText = styled.div`
-  height: 52px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: black;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
 `;
 
 const BodyContainer = styled.div`
-  margin-top: 78px;
-  width: 468px;
+  margin-top: 48px;
+  width: 303px;
   height: 43px;
   display: flex;
   justify-content: space-between;
@@ -83,8 +83,8 @@ const BodyContainer = styled.div`
 `;
 
 const SelectContainer = styled.div`
-  width: 243px;
-  height: 43px;
+  width: 151.5px;
+  height: 41px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,10 +99,10 @@ const SelectContainer = styled.div`
 `;
 
 const Text = styled.div`
-  height: 28px;
-  font-size: 20px;
+  height: 25px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import gasomannCircle from '../../assets/gasomannCircle.png';
 import valuableImage from '../../assets/valuableImage.png';
 import stressfuImage from '../../assets/stressfuImage.png';
-import dotCircle from '../../assets/dotCircle.png';
+import dotCircle from '../../assets/dotCirclePhone.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function PC_Third() {
+export default function Mobile_Third() {
   const [setRef, isVisible] = useAnimationOnScroll();
   return (
     <ContainerWrapper>
@@ -17,7 +17,6 @@ export default function PC_Third() {
         </TitleContainer>
         <DotCircle className={isVisible && 'animation'} src={dotCircle} alt="dot circle" />
         <GasomannCircle src={gasomannCircle} alt="gasomann circle" />
-        <Line className={isVisible && 'animation'} />
         <BodyContainer ref={setRef} className={isVisible && 'animation'}>
           <ContentContainer>
             <ContentImg src={valuableImage} alt="valuable" />
@@ -48,8 +47,8 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   position: relative;
-  width: 1440px;
-  height: 1068px;
+  width: 360px;
+  height: 738px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -57,15 +56,15 @@ const MainContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  padding-top: 135px;
+  padding-top: 125px;
   display: flex;
   align-items: center;
   flex-direction: column;
 `;
 
 const TitleBox = styled.div`
-  width: 269.13px;
-  height: 55px;
+  width: 170px;
+  height: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,25 +72,25 @@ const TitleBox = styled.div`
   color: white;
   font-family: 'Pretendard';
   font-weight: 700;
-  font-size: 30px;
-  margin-bottom: 19px;
+  font-size: 18px;
+  margin-bottom: 12px;
 `;
 
 const TitleText = styled.div`
-  height: 52px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: black;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 25px;
 `;
 
 const DotCircle = styled.img`
   position: absolute;
-  top: 340px;
-  width: 470px;
-  height: 470px;
+  top: 274px;
+  width: 232px;
+  height: 232px;
   opacity: 0;
   &.animation {
     animation: fadeInFromTop 1s ease-in-out forwards;
@@ -100,41 +99,27 @@ const DotCircle = styled.img`
 
 const GasomannCircle = styled.img`
   position: relative;
-  width: 143px;
-  height: 143px;
-  margin-top: 29px;
+  width: 87px;
+  height: 87px;
+  margin-top: 35px;
 `;
 
 const BodyContainer = styled.div`
   position: relative;
-  margin-top: 70px;
-  width: 876px;
+  margin-top: 63px;
+  width: 328px;
   display: flex;
   justify-content: space-between;
   opacity: 0;
   &.animation {
     animation: fadeInApp 1s ease-in-out forwards;
-    animation-delay: 0.5s;
-  }
-`;
-
-const Line = styled.div`
-  position: absolute;
-  bottom: -120px;
-  left: 719.5px;
-  height: 378px; //258
-  width: 1px;
-  background-color: black;
-  opacity: 0;
-  &.animation {
-    animation: fadeInFromTop 1.5s ease-in-out forwards;
-    animation-delay: 1s;
+    animation-delay: 0.4s;
   }
 `;
 
 const ContentContainer = styled.div`
-  width: 332px;
-  height: 454px;
+  width: 148px;
+  height: 221px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,8 +128,8 @@ const ContentContainer = styled.div`
 `;
 
 const ContentImg = styled.img`
-  width: 332px;
-  height: 332px;
+  width: 148px;
+  height: 148px;
 `;
 
 const TextWrapper = styled.div`
@@ -155,8 +140,8 @@ const TextWrapper = styled.div`
 `;
 
 const BoldText = styled.div`
-  height: 32px;
-  font-size: 25px;
+  height: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin-bottom: 8px;
   display: flex;
@@ -165,8 +150,8 @@ const BoldText = styled.div`
 `;
 
 const Text = styled.div`
-  height: 28px;
-  font-size: 20px;
+  height: 18px;
+  font-size: 13px;
   font-weight: 400;
   display: flex;
   align-items: center;
