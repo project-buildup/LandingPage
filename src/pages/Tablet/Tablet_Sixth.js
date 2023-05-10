@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import targetImage from '../../assets/targetImage.png';
-export default function PC_Sixth() {
+export default function Tablet_Sixth() {
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -27,8 +27,8 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   position: relative;
-  width: 1440px;
-  height: 880px;
+  width: 768px;
+  height: 746px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -43,41 +43,41 @@ const TitleContainer = styled.div`
 `;
 
 const TitleBox = styled.div`
-  width: 104px;
-  height: 34px;
+  width: 84px;
+  height: 27px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: white;
   font-family: 'GmarketSans';
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 10px;
 `;
 
 const TitleText = styled.div`
-  height: 52px;
+  height: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 const BoldText = styled.div`
-  height: 52px;
+  height: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 const Line = styled.div`
-  margin: 30px 0px;
+  margin: 20px 0px;
   height: 1px;
-  width: 683px;
+  width: 491px;
   background-color: white;
 `;
 
@@ -92,9 +92,9 @@ const SmallText = styled.div`
 `;
 
 const BigText = styled.div`
-  height: 182px;
+  height: 91px;
   margin-top: 75px;
-  font-size: 140px;
+  font-size: 70px;
   font-family: 'GmarketSans';
   font-weight: 700;
   opacity: 0.4;
@@ -105,9 +105,9 @@ const BigText = styled.div`
 `;
 
 const TargetImg = styled.img`
-  width: 312px;
-  height: 312px;
+  width: 254px;
+  height: 254px;
   position: absolute;
-  top: 391px;
-  left: 576px;
+  top: 384px;
+  left: 258px;
 `;

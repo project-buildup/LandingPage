@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 // import PC from './pages/PC';
-import Mobile from './pages/Mobile';
+import Tablet from './pages/Tablet';
+// import Mobile from './pages/Mobile';
 
 function App() {
   return (
     <AppContainer>
       {/* <PC /> */}
-      <Mobile />
+      <Tablet />
+      {/* <Mobile /> */}
     </AppContainer>
   );
 }

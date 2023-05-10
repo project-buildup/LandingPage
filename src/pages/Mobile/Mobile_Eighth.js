@@ -71,10 +71,11 @@ const MailBox = styled.div`
 `;
 
 const MailText = styled.div`
-  height: 24px;
+  height: 27px;
   margin-left: 18px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom:2px;
   justify-content: center;
   color: #2585f4;
   font-family: 'GmarketSans';

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import eighthBackgroundImage from '../../assets/eighthBackgroundImage.png';
 
-export default function PC_Eighth() {
+export default function Tablet_Eighth() {
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -28,15 +28,15 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   position: relative;
-  width: 1440px;
-  height: 395px;
+  width: 768px;
+  height: 315px;
   display: flex;
   flex-direction: column;
 `;
 
 const TitleContainer = styled.div`
-  margin-top: 126px;
-  margin-left: 168px;
+  margin-top: 87px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
 `;
@@ -52,13 +52,13 @@ const Title = styled.div`
 `;
 
 const TitleText = styled.div`
-  height: 48px;
-  margin-bottom: 12px;
+  height: 45px;
+  margin-bottom: 13px;
   display: flex;
   align-items: center;
   color: white;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 30px;
 `;
 
 const MailBox = styled.div`
