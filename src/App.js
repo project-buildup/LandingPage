@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PC from './pages/PC';
 import Tablet from './pages/Tablet';
@@ -16,11 +16,16 @@ function App() {
     query: '(min-width:360px) and (max-width:767px)',
   });
 
+  const [isLoading, setIsLoading] = useState(true);
+
+  setTimeout(() => setIsLoading(false), 500);
+
   return (
     <AppContainer>
-      {isPC && <PC />}
-      {isTablet && <Tablet />}
-      {isMobile && <Mobile />}
+      {isLoading && <Loading />}
+      {isLoading || (isPC && <PC />)}
+      {isLoading || (isTablet && <Tablet />)}
+      {isLoading || (isMobile && <Mobile />)}
     </AppContainer>
   );
 }
@@ -33,4 +38,10 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+`;
+
+const Loading = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: #2484f3;
 `;

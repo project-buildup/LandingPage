@@ -4,8 +4,8 @@ import gasomannLogoWhite from '../../assets/gasomannLogoWhite.png';
 import menuIcon from '../../assets/menuIcon.png';
 import appstoreLogo from '../../assets/appstoreLogo.png';
 import playstoreLogo from '../../assets/playstoreLogo.png';
-import gasomannAppLogo from '../../assets/gasomannAppLogo.png';
-import mainAppImage from '../../assets/mainAppImage.png';
+import gasomannAppLogo from '../../assets/gasomannAppLogo.webp';
+import mainAppImage from '../../assets/mainAppImage.webp';
 
 export default function Tablet_Main() {
   return (

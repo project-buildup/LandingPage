@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import gasomannLogoWhite from '../../assets/gasomannLogoWhite.png';
 import appstoreLogo from '../../assets/appstoreLogo.png';
 import playstoreLogo from '../../assets/playstoreLogo.png';
-import gasomannAppLogo from '../../assets/gasomannAppLogo.png';
-import mainAppImage from '../../assets/mainAppImage.png';
+import gasomannAppLogo from '../../assets/gasomannAppLogo.webp';
+import mainAppImage from '../../assets/mainAppImage.webp';
 
 export default function PC_Main() {
   return (
@@ -19,7 +19,6 @@ export default function PC_Main() {
             <AppDownloadButton>사전 예약</AppDownloadButton>
           </LinkContainer>
         </NavBarContainer>
-
         <BodyContainer>
           <LeftSectionContainer>
             <Blank />
@@ -115,16 +114,13 @@ const BodyContainer = styled.div`
   padding-right: 195px;
 `;
 
-const LeftSectionContainer = styled.div`
-  width: 455px;
-`;
+const LeftSectionContainer = styled.div``;
 
 const Blank = styled.div`
   height: 20.3vh;
   min-height: 130px;
 `;
 const TitleText = styled.div`
-  width: 455px;
   height: 65px;
   font-family: 'Pretendard';
   font-size: 50px;
