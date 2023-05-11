@@ -10,7 +10,7 @@ import partner6 from '../../assets/partner6.png';
 
 const PC_Seventh = forwardRef(function PC_Seventh(props, ref) {
   const handleContactClick = () => {
-    props.contactRef?.current?.scrollIntoView({ behavior: 'smooth' });
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <ContainerWrapper ref={props.partnerRef}>

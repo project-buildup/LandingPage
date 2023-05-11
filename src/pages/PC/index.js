@@ -24,7 +24,7 @@ export default function PC() {
       {loadedPage > 2 && <PC_Fourth setLoadedPage={setLoadedPage} />}
       {loadedPage > 3 && <PC_Toggle setLoadedPage={setLoadedPage} ref={partnerRef} />}
       {loadedPage > 4 && <PC_Sixth />}
-      {loadedPage > 4 && <PC_Seventh contactRef={contactRef} partnerRef={partnerRef} />}
+      {loadedPage > 4 && <PC_Seventh ref={contactRef} partnerRef={partnerRef} />}
       {loadedPage > 4 && <PC_Eighth ref={contactRef} />}
       {loadedPage > 4 && <PC_Ninth />}
       <PC_NavBar ref={contactRef} />
