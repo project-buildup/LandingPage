@@ -20,8 +20,10 @@ function App() {
 
   useEffect(() => {
     const checkFontsReady = async () => {
-      await document.fonts.ready;
-      setIsLoading(false);
+      let ready = await document.fonts.ready;
+      if (ready.status === 'loaded') {
+        setIsLoading(false);
+      }
     };
 
     checkFontsReady();
