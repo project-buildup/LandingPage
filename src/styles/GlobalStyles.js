@@ -98,5 +98,6 @@ export default createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: 'Pretendard';
+    scroll-behavior: smooth;
   }
 `;

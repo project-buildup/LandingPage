@@ -10,6 +10,7 @@ import Tablet_Eighth from './Tablet_Eighth';
 import Tablet_Ninth from './Tablet_Ninth';
 import styled from 'styled-components';
 import MenuBar from '../../components/MenuBar';
+import Tablet_NavBar from '../../components/Tablet_NavBar';
 
 export default function Tablet() {
   const ref = useRef();
@@ -26,6 +27,7 @@ export default function Tablet() {
       {loadedPage > 4 && <Tablet_Seventh ref={ref} />}
       {loadedPage > 4 && <Tablet_Eighth ref={ref} />}
       {loadedPage > 4 && <Tablet_Ninth />}
+      <Tablet_NavBar setOpen={setOpen} />
       <MenuBar ref={ref} open={open} setOpen={setOpen} />
     </TabletWrapper>
   );

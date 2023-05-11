@@ -40,7 +40,7 @@ export default function Mobile_Saving_Third() {
           </TitleContainer>
           <VideoContainer className={isVisible && 'animation'}>
             <RemitVideo>
-              <video ref={videoRef} muted loop width="163px">
+              <video ref={videoRef} muted loop width="163px" playsInline>
                 <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
               </video>
             </RemitVideo>

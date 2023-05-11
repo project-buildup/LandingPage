@@ -43,7 +43,7 @@ export default function PC_Saving_Third() {
           </TitleContainer>
           <VideoContainer className={isVisible && 'animation'}>
             <RemitVideo>
-              <video ref={videoRef} muted loop width="260px">
+              <video ref={videoRef} muted loop width="260px" playsInline>
                 <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
               </video>
             </RemitVideo>

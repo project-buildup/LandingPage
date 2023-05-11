@@ -22,12 +22,7 @@ const PC_Main = forwardRef(function PC_Main(props, ref) {
           <LogoImage src={gasomannLogoWhite} alt="gasomann logo" onClick={() => window.location.reload()} />
           <LinkContainer>
             <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>ABOUT</NavBarText>
-            <NavBarText
-              onClick={() => handleContactClick()}
-              // onClick={() => window.open('mailto:contact@projectbuildup.io', 'emailWindow')}
-            >
-              CONTACT
-            </NavBarText>
+            <NavBarText onClick={() => handleContactClick()}>CONTACT</NavBarText>
             <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>BLOG</NavBarText>
             <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
               사전 예약

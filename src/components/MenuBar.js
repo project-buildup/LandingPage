@@ -51,6 +51,7 @@ const Container = styled.div`
   align-items: center;
   background-color: #ffffff;
   transition: all 0.5s;
+  z-index: 201;
 `;
 
 const ExitIconWrapper = styled.div`

@@ -9,11 +9,13 @@ import PC_Seventh from './PC_Seventh';
 import PC_Eighth from './PC_Eighth';
 import PC_Ninth from './PC_Ninth';
 import styled from 'styled-components';
+import PC_NavBar from '../../components/PC_NavBar';
 
 export default function PC() {
   const contactRef = useRef();
   const partnerRef = useRef();
   const [loadedPage, setLoadedPage] = useState(0);
+
   return (
     <PCWrapper>
       <PC_Main setLoadedPage={setLoadedPage} ref={contactRef} />
@@ -25,6 +27,7 @@ export default function PC() {
       {loadedPage > 4 && <PC_Seventh contactRef={contactRef} partnerRef={partnerRef} />}
       {loadedPage > 4 && <PC_Eighth ref={contactRef} />}
       {loadedPage > 4 && <PC_Ninth />}
+      <PC_NavBar ref={contactRef} />
     </PCWrapper>
   );
 }

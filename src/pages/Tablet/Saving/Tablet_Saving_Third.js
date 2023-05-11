@@ -24,9 +24,7 @@ export default function Tablet_Saving_Third() {
       <MainContainer>
         <BodyContainer ref={setRef}>
           <TitleContainer className={isVisible && 'animation'}>
-            <TitleBox>
-              STEP 02
-            </TitleBox>
+            <TitleBox>STEP 02</TitleBox>
             <TitleText>절약할 때마다</TitleText>
             <TitleText>절약계좌에</TitleText>
             <TitleTextWrapper>
@@ -43,7 +41,7 @@ export default function Tablet_Saving_Third() {
           </TitleContainer>
           <VideoContainer className={isVisible && 'animation'}>
             <RemitVideo>
-              <video ref={videoRef} muted loop width="240px">
+              <video ref={videoRef} muted loop width="240px" playsInline>
                 <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
               </video>
             </RemitVideo>

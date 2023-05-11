@@ -10,6 +10,7 @@ import Mobile_Eighth from './Mobile_Eighth';
 import Mobile_Ninth from './Mobile_Ninth';
 import styled from 'styled-components';
 import MenuBar from '../../components/MenuBar';
+import Mobile_NavBar from '../../components/Mobile_NavBar';
 
 export default function Mobile() {
   const ref = useRef();
@@ -26,6 +27,7 @@ export default function Mobile() {
       {loadedPage > 4 && <Mobile_Seventh ref={ref} />}
       {loadedPage > 4 && <Mobile_Eighth ref={ref} />}
       {loadedPage > 4 && <Mobile_Ninth />}
+      <Mobile_NavBar setOpen={setOpen} />
       <MenuBar ref={ref} open={open} setOpen={setOpen} />
     </MobileWrapper>
   );
