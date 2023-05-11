@@ -1,12 +1,13 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import PC from './pages/PC';
+import Tablet from './pages/Tablet';
+import Mobile from './pages/Mobile';
 import { useMediaQuery } from 'react-responsive';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const PC = lazy(() => import('./pages/PC'));
-  const Tablet = lazy(() => import('./pages/Tablet'));
-  const Mobile = lazy(() => import('./pages/Mobile'));
+
   const isPC = useMediaQuery({
     query: '(min-width:1440px)',
   });
@@ -18,18 +19,20 @@ function App() {
   });
 
   useEffect(() => {
-    const isReady = async () => await document.fonts.ready;
-    isReady();
-    setIsLoading(false);
+    const checkFontsReady = async () => {
+      await document.fonts.ready;
+      setIsLoading(false);
+    };
+
+    checkFontsReady();
   }, [isLoading]);
 
   return (
     <AppContainer>
-      <Suspense fallback={<Loading />}>
-        {isLoading || (isPC && <PC />)}
-        {isLoading || (isTablet && <Tablet />)}
-        {isLoading || (isMobile && <Mobile />)}
-      </Suspense>
+      {isLoading && <Loading />}
+      {isLoading || (isPC && <PC />)}
+      {isLoading || (isTablet && <Tablet />)}
+      {isLoading || (isMobile && <Mobile />)}
     </AppContainer>
   );
 }
