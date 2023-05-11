@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PC from './pages/PC';
 import Tablet from './pages/Tablet';
@@ -18,9 +18,11 @@ function App() {
     query: '(min-width:360px) and (max-width:767px)',
   });
 
-  document.fonts.ready.then(() => {
+  useEffect(() => {
+    const isReady = async () => await document.fonts.ready;
+    isReady();
     setIsLoading(false);
-  });
+  }, [isLoading]);
 
   return (
     <AppContainer>
