@@ -6,6 +6,8 @@ import Mobile from './pages/Mobile';
 import { useMediaQuery } from 'react-responsive';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   const isPC = useMediaQuery({
     query: '(min-width:1440px)',
   });
@@ -16,9 +18,9 @@ function App() {
     query: '(min-width:360px) and (max-width:767px)',
   });
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  setTimeout(() => setIsLoading(false), 500);
+  document.fonts.ready.then(() => {
+    setIsLoading(false);
+  });
 
   return (
     <AppContainer>

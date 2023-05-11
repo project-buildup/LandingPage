@@ -11,6 +11,7 @@ export default createGlobalStyle`
     src: local("GmarketSansBold"), local("GmarketSans-Bold"), local("Gmarket Sans Bold"),url(${GmarketSans}) format("woff2");
     font-weight: 700;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -18,6 +19,7 @@ export default createGlobalStyle`
     src: local("Pretendard-ExtraBold"), url(${PretendardExtraBold}) format("woff2");
     font-weight: 800;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -25,6 +27,7 @@ export default createGlobalStyle`
     src: local("Pretendard-Bold"), url(${PretendardBold}) format("woff2");
     font-weight: 700;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -32,6 +35,7 @@ export default createGlobalStyle`
     src: local("Pretendard-SemiBoldd"), url(${PretendardSemiBold}) format("woff2");
     font-weight: 600;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -39,6 +43,7 @@ export default createGlobalStyle`
     src: local("Pretendard-Regular"), url(${PretendardRegular}) format("woff2");
     font-weight: 400;
     font-style: normal;
+    font-display: block;
   }
 
   @keyframes fadeInObject {
