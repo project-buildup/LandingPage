@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable */
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import partner1 from '../../assets/partner1.png';
