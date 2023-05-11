@@ -26,11 +26,17 @@ export default function PC_Ninth() {
               </IconTextWrapper>
             </TextWrapper>
             <TextWrapper className="box3">
-              <Text>SNS</Text>
+              <LinkText>SNS</LinkText>
               <TextBar>|</TextBar>
-              <Text>채용</Text>
+              <LinkText
+                onClick={() =>
+                  window.open('https://projectbuildup.notion.site/a4699397ede54d23847bf69e47d8818d', '_blank')
+                }
+              >
+                채용
+              </LinkText>
               <TextBar>|</TextBar>
-              <Text>이용약관 및 개인정보처리방침</Text>
+              <LinkText>이용약관 및 개인정보처리방침</LinkText>
             </TextWrapper>
           </TextContainer>
           <Text className="copyright">Copyright PROJECT BUILDUP, All Rights Reserved</Text>
@@ -119,4 +125,14 @@ const TextBar = styled.div`
   font-weight: 400;
   display: flex;
   align-items: center;
+`;
+
+const LinkText = styled.div`
+  height: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
 `;
