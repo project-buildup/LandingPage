@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import circleImage from '../../assets/circleImageTablet.png';
 import phoneImage from '../../assets/secondPhoneImage.png';
@@ -9,7 +10,10 @@ import redBackIcon from '../../assets/redBackIcon.png';
 import moneyIcon from '../../assets/moneyIcon.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function Tablet_Second() {
+export default function Tablet_Second({ setLoadedPage }) {
+  Tablet_Second.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -53,7 +57,7 @@ export default function Tablet_Second() {
           <RightContainer>
             <RightText>현명하게</RightText>
             <RightText>잘 소비하는 일</RightText>
-            <TriangleIcon src={triangleIcon} alt="triangle" />
+            <TriangleIcon src={triangleIcon} alt="triangle" onLoad={() => setLoadedPage(2)} />
             <RightTextBox>
               <BoxText>헬스 · 마인드케어</BoxText>
               <BoxText>자기 계발 · 귀중한 경험</BoxText>
@@ -130,7 +134,7 @@ const BodyContainer = styled.div`
 const LeftTextWrapper = styled.div`
   position: absolute;
   top: 226px;
-  left:-114px;
+  left: -114px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,7 +203,7 @@ const ArrowImg = styled.img`
   height: 153px;
   transform: rotate(180deg);
   margin-bottom: 57px;
-  margin-left:10px;
+  margin-left: 10px;
 `;
 
 const ArrowContainer2 = styled.div`
@@ -239,7 +243,7 @@ const ArrowImg2 = styled.img`
   height: 153px;
   transform: rotate(180deg);
   margin-top: 57px;
-  margin-right:10px;
+  margin-right: 10px;
 `;
 
 const RedBackIcon = styled.img`

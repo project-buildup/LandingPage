@@ -1,23 +1,25 @@
-import React from 'react';
+/* eslint-disable */
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import eighthBackgroundImage from '../../assets/eighthBackgroundImage.png';
 
-export default function Tablet_Eighth() {
+const Tablet_Eighth = forwardRef(function Tablet_Eighth(props, ref) {
   return (
-    <ContainerWrapper>
+    <ContainerWrapper ref={ref}>
       <MainContainer>
         <TitleContainer>
           <Title>CONTACT US</Title>
           <TitleText>궁금한 점이 있나요?</TitleText>
           <MailBox>
-            <MailText>MAIL</MailText>
+            <MailText onClick={() => window.open('mailto:contact@projectbuildup.io', 'emailWindow')}>MAIL</MailText>
             <MailAddress>contact@projectbuildup.io</MailAddress>
           </MailBox>
         </TitleContainer>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+export default Tablet_Eighth;
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -74,13 +76,13 @@ const MailText = styled.div`
   height: 27px;
   margin-left: 18px;
   display: flex;
-  align-items: flex-end;
-  padding-bottom:2px;
+  align-items: center;
   justify-content: center;
   color: #2585f4;
   font-family: 'GmarketSans';
   font-weight: 700;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 const MailAddress = styled.div`

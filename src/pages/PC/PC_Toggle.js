@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React, { forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import PC_Fifth from './PC_Fifth';
 import PC_Saving_First from './Saving/PC_Saving_First';
@@ -10,7 +11,7 @@ import PC_Value_Second from './Value/PC_Value_Second';
 import PC_Value_Third from './Value/PC_Value_Third';
 import styled from 'styled-components';
 
-export default function PC_Toggle({ setLoadedPage }) {
+const PC_Toggle = forwardRef(function PC_Toggle(props, ref) {
   PC_Toggle.propTypes = {
     setLoadedPage: PropTypes.func.isRequired,
   };
@@ -26,18 +27,20 @@ export default function PC_Toggle({ setLoadedPage }) {
           <PC_Saving_First />
           <PC_Saving_Second />
           <PC_Saving_Third />
-          <PC_Saving_Fourth setLoadedPage={setLoadedPage} />
+          <PC_Saving_Fourth setLoadedPage={props.setLoadedPage} />
         </div>
       ) : (
         <div>
           <PC_Value_First />
           <PC_Value_Second />
-          <PC_Value_Third />
+          <PC_Value_Third ref={ref} />
         </div>
       )}
     </ContainerWrapper>
   );
-}
+});
+
+export default PC_Toggle;
 
 const ContainerWrapper = styled.div`
   width: 100%;

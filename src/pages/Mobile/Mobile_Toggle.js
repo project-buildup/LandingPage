@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Mobile_Fifth from './Mobile_Fifth';
 import Mobile_Saving_First from './Saving/Mobile_Saving_First';
 import Mobile_Saving_Second from './Saving/Mobile_Saving_Second';
@@ -9,7 +10,11 @@ import Mobile_Value_Second from './Value/Mobile_Value_Second';
 import Mobile_Value_Third from './Value/Mobile_Value_Third';
 import styled from 'styled-components';
 
-export default function Mobile_Toggle() {
+export default function Mobile_Toggle({ setLoadedPage }) {
+  Mobile_Toggle.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
+
   const [selected, setSelected] = useState('saving');
   return (
     <ContainerWrapper>
@@ -21,7 +26,7 @@ export default function Mobile_Toggle() {
           <Mobile_Saving_First />
           <Mobile_Saving_Second />
           <Mobile_Saving_Third />
-          <Mobile_Saving_Fourth />
+          <Mobile_Saving_Fourth setLoadedPage={setLoadedPage} />
         </div>
       ) : (
         <div>

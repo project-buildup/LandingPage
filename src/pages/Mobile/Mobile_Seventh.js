@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable */
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import partner1 from '../../assets/partner1.png';
 import partner2 from '../../assets/partner2.png';
@@ -7,7 +8,10 @@ import partner4 from '../../assets/partner4.png';
 import partner5 from '../../assets/partner5.png';
 import partner6 from '../../assets/partner6.png';
 
-export default function Mobile_Seventh() {
+const Mobile_Seventh = forwardRef(function Mobile_Seventh(props, ref) {
+  const handleContactClick = () => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -27,11 +31,14 @@ export default function Mobile_Seventh() {
           <PartnerImg className="partner5" src={partner5} alt="partner5" />
           <PartnerImg className="partner6" src={partner6} alt="partner6" />
         </PartnerContainer>
-        <QuestionButton>파트너 및 제휴 문의하기</QuestionButton>
+        <QuestionButton onClick={() => handleContactClick()}>파트너 및 제휴 문의하기</QuestionButton>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default Mobile_Seventh;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;

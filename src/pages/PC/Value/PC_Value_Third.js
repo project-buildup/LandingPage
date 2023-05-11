@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import mapImage from '../../../assets/mapImage.png';
 import triangleIcon from '../../../assets/triangleIconBlue.png';
 import okayImage from '../../../assets/okayImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function PC_Value_Third() {
+const PC_Value_Third = forwardRef(function PC_Value_Third(props, ref) {
   const [setRef, isVisible] = useAnimationOnScroll();
-
+  const handlePartnerClick = () => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -22,7 +24,7 @@ export default function PC_Value_Third() {
               <TitleContentText>다른지역 오프라인</TitleContentText>
               <TitleContentText>가치소비는 조금만 기다려주세요</TitleContentText>
             </TitleContentWrapper>
-            <PartnerButton>제휴업체 확인하기</PartnerButton>
+            <PartnerButton onClick={() => handlePartnerClick()}>제휴업체 확인하기</PartnerButton>
           </TitleContainer>
           <MapImg className={isVisible && 'animation'} src={mapImage} alt="map" />
         </BodyContainer>
@@ -37,7 +39,10 @@ export default function PC_Value_Third() {
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default PC_Value_Third;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;

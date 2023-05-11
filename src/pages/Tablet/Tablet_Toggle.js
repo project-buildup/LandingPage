@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Tablet_Fifth from './Tablet_Fifth';
 import Tablet_Saving_First from './Saving/Tablet_Saving_First';
 import Tablet_Saving_Second from './Saving/Tablet_Saving_Second';
@@ -9,7 +10,11 @@ import Tablet_Value_Second from './Value/Tablet_Value_Second';
 import Tablet_Value_Third from './Value/Tablet_Value_Third';
 import styled from 'styled-components';
 
-export default function Tablet_Toggle() {
+export default function PC_Toggle({ setLoadedPage }) {
+  PC_Toggle.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
+
   const [selected, setSelected] = useState('saving');
   return (
     <ContainerWrapper>
@@ -21,7 +26,7 @@ export default function Tablet_Toggle() {
           <Tablet_Saving_First />
           <Tablet_Saving_Second />
           <Tablet_Saving_Third />
-          <Tablet_Saving_Fourth />
+          <Tablet_Saving_Fourth setLoadedPage={setLoadedPage} />
         </div>
       ) : (
         <div>

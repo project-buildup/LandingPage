@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable */
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import gasomannLogoWhite from '../../assets/gasomannLogoWhite.png';
 import menuIcon from '../../assets/menuIcon.png';
@@ -7,12 +8,12 @@ import playstoreLogo from '../../assets/playstoreLogo.png';
 import gasomannAppLogo from '../../assets/gasomannAppLogo.webp';
 import mainAppImage from '../../assets/mainAppImage.webp';
 
-export default function Tablet_Main() {
+export default function Tablet_Main(props) {
   return (
     <ContainerWrapper>
       <NavBarContainer>
-        <LogoImage src={gasomannLogoWhite} alt="gasomann logo" />
-        <MenuIcon src={menuIcon} alt="menu icon" />
+        <LogoImage src={gasomannLogoWhite} alt="gasomann logo" onClick={() => window.location.reload()} />
+        <MenuIcon src={menuIcon} alt="menu icon" onClick={() => props.setOpen(true)} />
       </NavBarContainer>
       <MainContainer>
         <BodyContainer>
@@ -20,16 +21,15 @@ export default function Tablet_Main() {
           <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
           <SubtitleText>GASOMANN</SubtitleText>
           <LineWrapper>
-            {' '}
-            <Line />{' '}
+            <Line />
           </LineWrapper>
           <DownloadText>GASOMANN 앱 다운로드</DownloadText>
           <DownloadButtonContainer>
-            <DownloadButton>
+            <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
               <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
               <DownloadButtonText>Google Play</DownloadButtonText>
             </DownloadButton>
-            <DownloadButton>
+            <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
               <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
               <DownloadButtonText>App Store</DownloadButtonText>
             </DownloadButton>
@@ -37,7 +37,7 @@ export default function Tablet_Main() {
         </BodyContainer>
         <ImageContainer>
           <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
-          <MainAppImage src={mainAppImage} alt="gasomann app logo" />
+          <MainAppImage src={mainAppImage} alt="gasomann app logo" onLoad={() => props.setLoadedPage(1)} />
         </ImageContainer>
       </MainContainer>
     </ContainerWrapper>
@@ -67,6 +67,7 @@ const NavBarContainer = styled.div`
 
 const LogoImage = styled.img`
   width: 145px;
+  cursor: pointer;
 `;
 
 const MenuIcon = styled.img`

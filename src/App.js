@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PC from './pages/PC';
@@ -21,7 +22,6 @@ function App() {
   useEffect(() => {
     const checkFontsReady = async () => {
       let ready = await document.fonts.ready;
-      console.log(ready);
       if (ready.status === 'loaded') {
         setIsLoading(false);
       }

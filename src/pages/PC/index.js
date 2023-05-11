@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PC_Main from './PC_Main';
 import PC_Second from './PC_Second';
 import PC_Third from './PC_Third';
@@ -11,22 +11,20 @@ import PC_Ninth from './PC_Ninth';
 import styled from 'styled-components';
 
 export default function PC() {
+  const contactRef = useRef();
+  const partnerRef = useRef();
   const [loadedPage, setLoadedPage] = useState(0);
   return (
     <PCWrapper>
-      <PC_Main setLoadedPage={setLoadedPage} />
+      <PC_Main setLoadedPage={setLoadedPage} ref={contactRef} />
       {loadedPage > 0 && <PC_Second setLoadedPage={setLoadedPage} />}
       {loadedPage > 1 && <PC_Third setLoadedPage={setLoadedPage} />}
       {loadedPage > 2 && <PC_Fourth setLoadedPage={setLoadedPage} />}
-      {loadedPage > 3 && <PC_Toggle setLoadedPage={setLoadedPage} />}
-      {loadedPage > 4 && (
-        <div>
-          <PC_Sixth setLoadedPage={setLoadedPage} />
-          <PC_Seventh setLoadedPage={setLoadedPage} />
-          <PC_Eighth setLoadedPage={setLoadedPage} />
-          <PC_Ninth setLoadedPage={setLoadedPage} />
-        </div>
-      )}
+      {loadedPage > 3 && <PC_Toggle setLoadedPage={setLoadedPage} ref={partnerRef} />}
+      {loadedPage > 4 && <PC_Sixth />}
+      {loadedPage > 4 && <PC_Seventh contactRef={contactRef} partnerRef={partnerRef} />}
+      {loadedPage > 4 && <PC_Eighth ref={contactRef} />}
+      {loadedPage > 4 && <PC_Ninth />}
     </PCWrapper>
   );
 }

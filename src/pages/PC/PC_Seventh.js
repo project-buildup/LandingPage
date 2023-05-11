@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import partner1 from '../../assets/partner1.png';
 import partner2 from '../../assets/partner2.png';
@@ -7,9 +8,12 @@ import partner4 from '../../assets/partner4.png';
 import partner5 from '../../assets/partner5.png';
 import partner6 from '../../assets/partner6.png';
 
-export default function PC_Seventh() {
+const PC_Seventh = forwardRef(function PC_Seventh(props, ref) {
+  const handleContactClick = () => {
+    props.contactRef?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
-    <ContainerWrapper>
+    <ContainerWrapper ref={props.partnerRef}>
       <MainContainer>
         <TitleContainer>
           <TitleBox>PARTNER</TitleBox>
@@ -28,11 +32,14 @@ export default function PC_Seventh() {
             <PartnerImg className="partner6" src={partner6} alt="partner6" />
           </PartnerWrapper>
         </PartnerContainer>
-        <QuestionButton>파트너 및 제휴 문의하기</QuestionButton>
+        <QuestionButton onClick={() => handleContactClick()}>파트너 및 제휴 문의하기</QuestionButton>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default PC_Seventh;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;

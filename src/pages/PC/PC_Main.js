@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable */
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import gasomannLogoWhite from '../../assets/gasomannLogoWhite.png';
@@ -7,21 +8,30 @@ import playstoreLogo from '../../assets/playstoreLogo.png';
 import gasomannAppLogo from '../../assets/gasomannAppLogo.webp';
 import mainAppImage from '../../assets/mainAppImage.webp';
 
-export default function PC_Main({ setLoadedPage }) {
+const PC_Main = forwardRef(function PC_Main(props, ref) {
   PC_Main.propTypes = {
     setLoadedPage: PropTypes.func.isRequired,
   };
-
+  const handleContactClick = () => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <ContainerWrapper>
       <MainContainer>
         <NavBarContainer>
-          <LogoImage src={gasomannLogoWhite} alt="gasomann logo" />
+          <LogoImage src={gasomannLogoWhite} alt="gasomann logo" onClick={() => window.location.reload()} />
           <LinkContainer>
-            <NavBarText>ABOUT</NavBarText>
-            <NavBarText>CONTACT</NavBarText>
-            <NavBarText>BLOG</NavBarText>
-            <AppDownloadButton>사전 예약</AppDownloadButton>
+            <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>ABOUT</NavBarText>
+            <NavBarText
+              onClick={() => handleContactClick()}
+              // onClick={() => window.open('mailto:contact@projectbuildup.io', 'emailWindow')}
+            >
+              CONTACT
+            </NavBarText>
+            <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>BLOG</NavBarText>
+            <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+              사전 예약
+            </AppDownloadButton>
           </LinkContainer>
         </NavBarContainer>
         <BodyContainer>
@@ -33,11 +43,11 @@ export default function PC_Main({ setLoadedPage }) {
             <LineWrapper>{window.innerHeight > 640 && <Line />}</LineWrapper>
             <DownloadText>GASOMANN 앱 다운로드</DownloadText>
             <DownloadButtonContainer>
-              <DownloadButton>
+              <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
                 <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
                 <DownloadButtonText>Google Play</DownloadButtonText>
               </DownloadButton>
-              <DownloadButton>
+              <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
                 <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
                 <DownloadButtonText>App Store</DownloadButtonText>
               </DownloadButton>
@@ -45,13 +55,15 @@ export default function PC_Main({ setLoadedPage }) {
           </LeftSectionContainer>
           <RightSectionContainer>
             <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
-            <MainAppImage src={mainAppImage} alt="gasomann app logo" onLoad={() => setLoadedPage(1)} />
+            <MainAppImage src={mainAppImage} alt="gasomann app logo" onLoad={() => props.setLoadedPage(1)} />
           </RightSectionContainer>
         </BodyContainer>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default PC_Main;
 
 const ContainerWrapper = styled.div`
   position: relative;
@@ -79,6 +91,7 @@ const NavBarContainer = styled.div`
 
 const LogoImage = styled.img`
   width: 162px;
+  cursor: pointer;
 `;
 
 const LinkContainer = styled.div`
@@ -224,6 +237,7 @@ const RightSectionContainer = styled.div`
 const GasomannAppLogo = styled.img`
   height: 75.25vh;
   min-height: 482px;
+  max-height: 723px;
   padding-top: 9px;
   animation: fadeInApp 0.8s backwards;
   animation-delay: 0.6s;

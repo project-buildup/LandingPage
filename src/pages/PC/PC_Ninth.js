@@ -26,7 +26,7 @@ export default function PC_Ninth() {
               </IconTextWrapper>
             </TextWrapper>
             <TextWrapper className="box3">
-              <LinkText>SNS</LinkText>
+              <LinkText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>SNS</LinkText>
               <TextBar>|</TextBar>
               <LinkText
                 onClick={() =>
@@ -36,7 +36,9 @@ export default function PC_Ninth() {
                 채용
               </LinkText>
               <TextBar>|</TextBar>
-              <LinkText>이용약관 및 개인정보처리방침</LinkText>
+              <LinkText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>
+                이용약관 및 개인정보처리방침
+              </LinkText>
             </TextWrapper>
           </TextContainer>
           <Text className="copyright">Copyright PROJECT BUILDUP, All Rights Reserved</Text>

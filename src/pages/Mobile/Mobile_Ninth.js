@@ -28,11 +28,19 @@ export default function Mobile_Ninth() {
             </IconTextWrapper>
           </TextWrapper>
           <TextWrapper className="box4">
-            <Text>SNS</Text>
+            <LinkText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>SNS</LinkText>
             <TextBar>|</TextBar>
-            <Text>채용</Text>
+            <LinkText
+              onClick={() =>
+                window.open('https://projectbuildup.notion.site/a4699397ede54d23847bf69e47d8818d', '_blank')
+              }
+            >
+              채용
+            </LinkText>
             <TextBar>|</TextBar>
-            <Text>이용약관 및 개인정보처리방침</Text>
+            <LinkText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>
+              이용약관 및 개인정보처리방침
+            </LinkText>
           </TextWrapper>
           <Text className="copyright">Copyright PROJECT BUILDUP, All Rights Reserved</Text>
         </BodyContainer>
@@ -119,4 +127,14 @@ const TextBar = styled.div`
   font-weight: 400;
   display: flex;
   align-items: center;
+`;
+
+const LinkText = styled.div`
+  height: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
 `;

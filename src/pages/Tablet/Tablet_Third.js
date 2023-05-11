@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import gasomannCircle from '../../assets/gasomannCircle.png';
 import valuableImage from '../../assets/valuableImage.png';
@@ -6,7 +7,11 @@ import stressfuImage from '../../assets/stressfuImage.png';
 import dotCircle from '../../assets/dotCircle.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function Tablet_Third() {
+export default function Tablet_Third({ setLoadedPage }) {
+  Tablet_Third.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
+
   const [setRef, isVisible] = useAnimationOnScroll();
   return (
     <ContainerWrapper>
@@ -28,7 +33,7 @@ export default function Tablet_Third() {
             </TextWrapper>
           </ContentContainer>
           <ContentContainer>
-            <ContentImg src={stressfuImage} alt="stressful" />
+            <ContentImg src={stressfuImage} alt="stressful" onLoad={() => setLoadedPage(3)} />
             <TextWrapper>
               <BoldText>충동적인 홧김소비는 그만!</BoldText>
               <Text>아, 조금만 참을 걸...</Text>
