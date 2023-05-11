@@ -43,7 +43,7 @@ export default function PC_Saving_Third() {
           </TitleContainer>
           <VideoContainer className={isVisible && 'animation'}>
             <RemitVideo>
-              <video ref={videoRef} muted loop width="265px">
+              <video ref={videoRef} muted loop width="260px">
                 <source src={process.env.PUBLIC_URL + '/videos/remit.mp4'} type="video/mp4" />
               </video>
             </RemitVideo>
@@ -206,8 +206,8 @@ const VideoContainer = styled.div`
 `;
 
 const RemitVideo = styled.div`
-  width: 265px;
-  height: 552px;
+  width: 260px;
+  height: 542px;
   border-radius: 30px;
   margin-bottom: 10px;
   display: flex;

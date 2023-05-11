@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import coffeeImage from '../../assets/coffeeImage.png';
 import healthImage from '../../assets/healthImage.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function PC_Fourth() {
+export default function PC_Fourth({ setLoadedPage }) {
+  PC_Fourth.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -24,7 +28,7 @@ export default function PC_Fourth() {
             </TextWrapper>
           </CardContainer>
           <CardContainer id="right" className={isVisible && 'animation'}>
-            <CircleImg src={healthImage} alt="health" />
+            <CircleImg src={healthImage} alt="health" onLoad={() => setLoadedPage(4)} />
             <TextWrapper>
               <BoldText>가치소비</BoldText>
               <Text>소비 주체에 귀중한 경험</Text>

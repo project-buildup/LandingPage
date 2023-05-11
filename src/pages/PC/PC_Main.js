@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import gasomannLogoWhite from '../../assets/gasomannLogoWhite.png';
 import appstoreLogo from '../../assets/appstoreLogo.png';
@@ -6,7 +7,11 @@ import playstoreLogo from '../../assets/playstoreLogo.png';
 import gasomannAppLogo from '../../assets/gasomannAppLogo.webp';
 import mainAppImage from '../../assets/mainAppImage.webp';
 
-export default function PC_Main() {
+export default function PC_Main({ setLoadedPage }) {
+  PC_Main.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
+
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -40,7 +45,7 @@ export default function PC_Main() {
           </LeftSectionContainer>
           <RightSectionContainer>
             <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
-            <MainAppImage src={mainAppImage} alt="gasomann app logo" />
+            <MainAppImage src={mainAppImage} alt="gasomann app logo" onLoad={() => setLoadedPage(1)} />
           </RightSectionContainer>
         </BodyContainer>
       </MainContainer>

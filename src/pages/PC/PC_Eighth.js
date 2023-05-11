@@ -75,7 +75,7 @@ const MailText = styled.div`
   margin-left: 18px;
   display: flex;
   align-items: flex-end;
-  padding-bottom:2px;
+  padding-bottom: 2px;
   justify-content: center;
   color: #2585f4;
   font-family: 'GmarketSans';

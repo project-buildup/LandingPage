@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import phoneImage from '../../../assets/savingThirdPhoneImage.png';
 import archivingCardImage from '../../../assets/archivingCardImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function PC_Saving_Fourth() {
+export default function PC_Saving_Fourth({ setLoadedPage }) {
+  PC_Saving_Fourth.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -24,7 +28,12 @@ export default function PC_Saving_Fourth() {
             <TitleContentText>그 자체만으로 뿌듯해져요</TitleContentText>
           </TitleContainer>
           <PhoneImg className={isVisible && 'animation'} src={phoneImage} alt="phone" />
-          <ArchivingImg className={isVisible && 'animation'} src={archivingCardImage} alt="archiving" />
+          <ArchivingImg
+            className={isVisible && 'animation'}
+            src={archivingCardImage}
+            alt="archiving"
+            onLoad={() => setLoadedPage(5)}
+          />
         </BodyContainer>
       </MainContainer>
     </ContainerWrapper>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import PC_Fifth from './PC_Fifth';
 import PC_Saving_First from './Saving/PC_Saving_First';
 import PC_Saving_Second from './Saving/PC_Saving_Second';
@@ -9,7 +10,11 @@ import PC_Value_Second from './Value/PC_Value_Second';
 import PC_Value_Third from './Value/PC_Value_Third';
 import styled from 'styled-components';
 
-export default function PC_Toggle() {
+export default function PC_Toggle({ setLoadedPage }) {
+  PC_Toggle.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
+
   const [selected, setSelected] = useState('saving');
   return (
     <ContainerWrapper>
@@ -21,7 +26,7 @@ export default function PC_Toggle() {
           <PC_Saving_First />
           <PC_Saving_Second />
           <PC_Saving_Third />
-          <PC_Saving_Fourth />
+          <PC_Saving_Fourth setLoadedPage={setLoadedPage} />
         </div>
       ) : (
         <div>

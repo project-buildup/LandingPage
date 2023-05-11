@@ -6,7 +6,6 @@ import PretendardSemiBold from '../assets/fonts//Pretendard-SemiBold.woff2';
 import PretendardRegular from '../assets/fonts/Pretendard-Regular.woff2';
 
 export default createGlobalStyle`
-
   @font-face {
     font-family: 'GmarketSans';
     src: local('GmarketSansBold'), local('GmarketSans-Bold'), local('Gmarket Sans Bold'),

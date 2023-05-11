@@ -21,6 +21,7 @@ function App() {
   useEffect(() => {
     const checkFontsReady = async () => {
       let ready = await document.fonts.ready;
+      console.log(ready);
       if (ready.status === 'loaded') {
         setIsLoading(false);
       }

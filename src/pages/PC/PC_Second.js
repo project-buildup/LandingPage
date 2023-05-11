@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import circleImage from '../../assets/circleImage.png';
 import phoneImage from '../../assets/secondPhoneImage.png';
@@ -9,7 +10,10 @@ import redBackIcon from '../../assets/redBackIcon.png';
 import moneyIcon from '../../assets/moneyIcon.png';
 import { useAnimationOnScroll } from '../../hooks/useAnimationOnScroll';
 
-export default function PC_Second() {
+export default function PC_Second({ setLoadedPage }) {
+  PC_Second.propTypes = {
+    setLoadedPage: PropTypes.func.isRequired,
+  };
   const [setRef, isVisible] = useAnimationOnScroll();
 
   return (
@@ -53,7 +57,7 @@ export default function PC_Second() {
           <RightContainer>
             <RightText>현명하게</RightText>
             <RightText>잘 소비하는 일</RightText>
-            <TriangleIcon src={triangleIcon} alt="triangle" />
+            <TriangleIcon src={triangleIcon} alt="triangle" onLoad={() => setLoadedPage(2)} />
             <RightTextBox>
               <BoxText>헬스 · 마인드케어</BoxText>
               <BoxText>자기 계발 · 귀중한 경험</BoxText>
