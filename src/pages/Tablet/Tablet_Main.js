@@ -16,28 +16,29 @@ export default function Tablet_Main() {
       </NavBarContainer>
       <MainContainer>
         <BodyContainer>
-            <TitleText>당신의 소비를 가치있게</TitleText>
-            <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
-            <SubtitleText>GASOMANN</SubtitleText>
-            <LineWrapper> <Line /> </LineWrapper>
-            <DownloadText>GASOMANN 앱 다운로드</DownloadText>
-            <DownloadButtonContainer>
-              <DownloadButton>
-                <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
-                <DownloadButtonText>Google Play</DownloadButtonText>
-              </DownloadButton>
-              <DownloadButton>
-                <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
-                <DownloadButtonText>App Store</DownloadButtonText>
-              </DownloadButton>
-            </DownloadButtonContainer>
+          <TitleText>당신의 소비를 가치있게</TitleText>
+          <SubtitleText>절약챌린지 & 가치소비추천 솔루션</SubtitleText>
+          <SubtitleText>GASOMANN</SubtitleText>
+          <LineWrapper>
+            {' '}
+            <Line />{' '}
+          </LineWrapper>
+          <DownloadText>GASOMANN 앱 다운로드</DownloadText>
+          <DownloadButtonContainer>
+            <DownloadButton>
+              <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
+              <DownloadButtonText>Google Play</DownloadButtonText>
+            </DownloadButton>
+            <DownloadButton>
+              <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
+              <DownloadButtonText>App Store</DownloadButtonText>
+            </DownloadButton>
+          </DownloadButtonContainer>
         </BodyContainer>
-        {window.innerHeight > 400 &&
         <ImageContainer>
           <GasomannAppLogo src={gasomannAppLogo} alt="gasomann app logo" />
           <MainAppImage src={mainAppImage} alt="gasomann app logo" />
         </ImageContainer>
-      }
       </MainContainer>
     </ContainerWrapper>
   );
@@ -47,12 +48,12 @@ const ContainerWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 640px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #2484f3;
-  overflow:hidden;
+  overflow: hidden;
 `;
 
 const NavBarContainer = styled.div`
@@ -80,7 +81,7 @@ const MainContainer = styled.div`
 `;
 
 const BodyContainer = styled.div`
-  margin-top:85px;
+  margin-top: 85px;
   padding-left: 40px;
   padding-right: 18px;
 `;
@@ -177,13 +178,13 @@ const DownloadButtonText = styled.div`
 
 const ImageContainer = styled.div`
   position: absolute;
-  top:235px;
-  margin-left:290px;
+  top: 235px;
+  margin-left: 290px;
 `;
 
 const GasomannAppLogo = styled.img`
-  position:relative;
-  height:437px;
+  position: relative;
+  height: 437px;
   animation: fadeInApp 0.8s backwards;
   animation-delay: 0.6s;
 `;
@@ -191,7 +192,7 @@ const GasomannAppLogo = styled.img`
 const MainAppImage = styled.img`
   position: absolute;
   left: 62px;
-  height:480px;
+  height: 480px;
   animation: fadeInApp 0.8s backwards;
   animation-delay: 1.1s;
 `;
