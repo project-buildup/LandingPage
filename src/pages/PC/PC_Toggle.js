@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import PC_Fifth from './PC_Fifth';
 import PC_Saving_First from './Saving/PC_Saving_First';
@@ -16,24 +16,26 @@ const PC_Toggle = forwardRef(function PC_Toggle(props, ref) {
     setLoadedPage: PropTypes.func.isRequired,
   };
 
+  const toggleRef = useRef();
   const [selected, setSelected] = useState('saving');
+
   return (
     <ContainerWrapper>
       <Fifth_Wrapper>
-        <PC_Fifth selected={selected} setSelected={setSelected} />
+        <PC_Fifth selected={selected} setSelected={setSelected} ref={toggleRef} />
       </Fifth_Wrapper>
       {selected === 'saving' ? (
         <div>
           <PC_Saving_First />
           <PC_Saving_Second />
           <PC_Saving_Third />
-          <PC_Saving_Fourth setLoadedPage={props.setLoadedPage} />
+          <PC_Saving_Fourth setLoadedPage={props.setLoadedPage} setSelected={setSelected} ref={toggleRef} />
         </div>
       ) : (
         <div>
           <PC_Value_First />
           <PC_Value_Second />
-          <PC_Value_Third ref={ref} />
+          <PC_Value_Third ref={ref} setSelected={setSelected} toggleRef={toggleRef} />
         </div>
       )}
     </ContainerWrapper>

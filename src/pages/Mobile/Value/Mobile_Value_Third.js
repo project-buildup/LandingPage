@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import mapImage from '../../../assets/mapImage.png';
 import triangleIcon from '../../../assets/triangleIconBlue.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function Mobile_Value_Third() {
+const Mobile_Value_Third = forwardRef(function Mobile_Value_Third(props, ref) {
+  Mobile_Value_Third.propTypes = {
+    setSelected: PropTypes.func.isRequired,
+  };
+  const { setSelected } = { ...props };
+
   const [setRef, isVisible] = useAnimationOnScroll();
+
+  const handleGoSavingClick = () => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => setSelected('saving'), 800);
+  };
 
   return (
     <ContainerWrapper>
@@ -30,10 +41,16 @@ export default function Mobile_Value_Third() {
             <BoxText>곧 만나볼 수 있어요!</BoxText>
           </TextBox>
         </TextBoxWrapper>
+        <GoSavingButton className={isVisible && 'animation'} onClick={() => handleGoSavingClick()}>
+          절약 챌린지 보러가기
+        </GoSavingButton>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default Mobile_Value_Third;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -146,4 +163,24 @@ const BoxText = styled.div`
   color: white;
   display: flex;
   align-items: center;
+`;
+
+const GoSavingButton = styled.div`
+  width: 328px;
+  height: 49px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2484f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 110px;
+  cursor: pointer;
+  opacity: 0;
+  &.animation {
+    animation: fadeInObject 0.8s forwards;
+    animation-delay: 1.6s;
+  }
 `;

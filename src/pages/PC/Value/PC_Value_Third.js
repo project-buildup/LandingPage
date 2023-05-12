@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import mapImage from '../../../assets/mapImage.png';
 import triangleIcon from '../../../assets/triangleIconBlue.png';
@@ -6,10 +7,23 @@ import okayImage from '../../../assets/okayImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
 const PC_Value_Third = forwardRef(function PC_Value_Third(props, ref) {
+  PC_Value_Third.propTypes = {
+    setSelected: PropTypes.func.isRequired,
+  };
+
+  const { toggleRef, setSelected } = { ...props };
+
   const [setRef, isVisible] = useAnimationOnScroll();
+
   const handlePartnerClick = () => {
     ref?.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const handleGoSavingClick = () => {
+    toggleRef?.current?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => setSelected('saving'), 800);
+  };
+
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -36,6 +50,9 @@ const PC_Value_Third = forwardRef(function PC_Value_Third(props, ref) {
             <OkayImg src={okayImage} alt="okay" />
           </TextBox>
         </TextBoxWrapper>
+        <GoSavingButton className={isVisible && 'animation'} onClick={() => handleGoSavingClick()}>
+          절약 챌린지 보러가기
+        </GoSavingButton>
       </MainContainer>
     </ContainerWrapper>
   );
@@ -52,7 +69,7 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 951px;
+  height: 1100px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -184,4 +201,25 @@ const OkayImg = styled.img`
   position: absolute;
   left: 67px;
   bottom: 0px;
+`;
+
+const GoSavingButton = styled.div`
+  width: 202px;
+  height: 49px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2484f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 110px;
+  cursor: pointer;
+
+  opacity: 0;
+  &.animation {
+    animation: fadeInObject 0.8s forwards;
+    animation-delay: 1.6s;
+  }
 `;

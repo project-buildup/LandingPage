@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import mapImage from '../../../assets/mapImage.png';
 import triangleIcon from '../../../assets/triangleIconBlue.png';
 import okayImage from '../../../assets/okayImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function Tablet_Value_Third() {
+const Tablet_Value_Third = forwardRef(function Tablet_Value_Third(props, ref) {
+  Tablet_Value_Third.propTypes = {
+    setSelected: PropTypes.func.isRequired,
+  };
+
+  const { setSelected } = { ...props };
   const [setRef, isVisible] = useAnimationOnScroll();
+
+  const handleGoSavingClick = () => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => setSelected('saving'), 800);
+  };
 
   return (
     <ContainerWrapper>
       <MainContainer>
         <BodyContainer ref={setRef}>
           <TitleContainer className={isVisible && 'animation'}>
-            <TitleBox>
-              SERVICE
-            </TitleBox>
+            <TitleBox>SERVICE</TitleBox>
             <TitleText>현재 대구지역에서만</TitleText>
             <TitleText>지원하고 있어요</TitleText>
             <TitleContentWrapper>
@@ -33,10 +42,16 @@ export default function Tablet_Value_Third() {
             <OkayImg src={okayImage} alt="okay" />
           </TextBox>
         </TextBoxWrapper>
+        <GoSavingButton className={isVisible && 'animation'} onClick={() => handleGoSavingClick()}>
+          절약 챌린지 보러가기
+        </GoSavingButton>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default Tablet_Value_Third;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -46,11 +61,10 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   width: 768px;
-  height: 1177px;
+  height: 1300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 `;
 
 const BodyContainer = styled.div`
@@ -101,12 +115,11 @@ const TitleText = styled.div`
 
 const TitleContentWrapper = styled.div`
   height: 52px;
-  margin-top:18px;
+  margin-top: 18px;
   margin-bottom: 54px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 `;
 
 const TitleContentText = styled.div`
@@ -116,7 +129,6 @@ const TitleContentText = styled.div`
   font-weight: 400;
   font-size: 20px;
 `;
-
 
 const MapImg = styled.img`
   width: 381px;
@@ -169,4 +181,25 @@ const OkayImg = styled.img`
   position: absolute;
   left: 67px;
   bottom: 0px;
+`;
+
+const GoSavingButton = styled.div`
+  width: 202px;
+  height: 49px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2484f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 110px;
+  cursor: pointer;
+
+  opacity: 0;
+  &.animation {
+    animation: fadeInObject 0.8s forwards;
+    animation-delay: 1.6s;
+  }
 `;

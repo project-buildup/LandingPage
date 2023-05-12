@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Tablet_Fifth from './Tablet_Fifth';
 import Tablet_Saving_First from './Saving/Tablet_Saving_First';
@@ -15,24 +15,26 @@ export default function PC_Toggle({ setLoadedPage }) {
     setLoadedPage: PropTypes.func.isRequired,
   };
 
+  const toggleRef = useRef();
   const [selected, setSelected] = useState('saving');
+
   return (
     <ContainerWrapper>
       <Fifth_Wrapper>
-        <Tablet_Fifth selected={selected} setSelected={setSelected} />
+        <Tablet_Fifth selected={selected} setSelected={setSelected} ref={toggleRef} />
       </Fifth_Wrapper>
       {selected === 'saving' ? (
         <div>
           <Tablet_Saving_First />
           <Tablet_Saving_Second />
           <Tablet_Saving_Third />
-          <Tablet_Saving_Fourth setLoadedPage={setLoadedPage} />
+          <Tablet_Saving_Fourth setLoadedPage={setLoadedPage} setSelected={setSelected} ref={toggleRef} />
         </div>
       ) : (
         <div>
           <Tablet_Value_First />
           <Tablet_Value_Second />
-          <Tablet_Value_Third />
+          <Tablet_Value_Third ref={toggleRef} setSelected={setSelected} />
         </div>
       )}
     </ContainerWrapper>

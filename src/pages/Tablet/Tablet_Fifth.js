@@ -1,15 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-export default function Tablet_Fifth({ selected, setSelected }) {
+const Tablet_Fifth = forwardRef(function Tablet_Fifth(props, ref) {
   Tablet_Fifth.propTypes = {
     selected: PropTypes.string.isRequired,
     setSelected: PropTypes.func.isRequired,
   };
 
+  const { selected, setSelected } = { ...props };
+
   return (
-    <ContainerWrapper>
+    <ContainerWrapper ref={ref}>
       <MainContainer>
         <TitleContainer>
           <TitleBox>POINT 02</TitleBox>
@@ -27,7 +29,10 @@ export default function Tablet_Fifth({ selected, setSelected }) {
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default Tablet_Fifth;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;

@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import phoneImage from '../../../assets/savingThirdPhoneImage.png';
 import archivingCardImage from '../../../assets/archivingCardImage.png';
 import { useAnimationOnScroll } from '../../../hooks/useAnimationOnScroll';
 
-export default function PC_Saving_Fourth({ setLoadedPage }) {
+const PC_Saving_Fourth = forwardRef(function PC_Saving_Fourth(props, ref) {
   PC_Saving_Fourth.propTypes = {
     setLoadedPage: PropTypes.func.isRequired,
+    setSelected: PropTypes.func.isRequired,
   };
+
+  const { setLoadedPage, setSelected } = { ...props };
+
   const [setRef, isVisible] = useAnimationOnScroll();
+
+  const handleGoValue = () => {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => setSelected('value'), 800);
+  };
 
   return (
     <ContainerWrapper>
@@ -35,10 +44,16 @@ export default function PC_Saving_Fourth({ setLoadedPage }) {
             onLoad={() => setLoadedPage(5)}
           />
         </BodyContainer>
+        <GoValueButton className={isVisible && 'animation'} onClick={() => handleGoValue()}>
+          가치소비 추천 보러가기
+        </GoValueButton>
       </MainContainer>
     </ContainerWrapper>
   );
-}
+});
+
+export default PC_Saving_Fourth;
+
 const ContainerWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -48,7 +63,7 @@ const ContainerWrapper = styled.div`
 
 const MainContainer = styled.div`
   width: 1440px;
-  height: 972px;
+  height: 1100px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -151,5 +166,25 @@ const ArchivingImg = styled.img`
   &.animation {
     animation: fadeInApp 0.8s forwards;
     animation-delay: 1s;
+  }
+`;
+
+const GoValueButton = styled.div`
+  width: 202px;
+  height: 49px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2484f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 120px;
+  cursor: pointer;
+  opacity: 0;
+  &.animation {
+    animation: fadeInApp 0.8s forwards;
+    animation-delay: 1.4s;
   }
 `;
