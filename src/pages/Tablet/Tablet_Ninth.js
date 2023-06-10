@@ -26,7 +26,7 @@ export default function Tablet_Ninth() {
               </TextWrapper>
             </TextWrapper>
             <TextWrapper className="box2">
-              <LinkText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>SNS</LinkText>
+              <LinkText onClick={() => window.open('https://www.instagram.com/gasomann/')}>SNS</LinkText>
               <TextBar>|</TextBar>
               <LinkText
                 onClick={() =>

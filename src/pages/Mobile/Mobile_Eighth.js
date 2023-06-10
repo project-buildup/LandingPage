@@ -10,8 +10,8 @@ const Mobile_Eighth = forwardRef(function Mobile_Eighth(props, ref) {
         <TitleContainer>
           <Title>CONTACT US</Title>
           <TitleText>궁금한 점이 있나요?</TitleText>
-          <MailBox>
-            <MailText onClick={() => window.open('mailto:contact@projectbuildup.io', 'emailWindow')}>MAIL</MailText>
+          <MailBox onClick={() => window.open('mailto:contact@projectbuildup.io', 'emailWindow')}>
+            <MailText>MAIL</MailText>
             <MailAddress>contact@projectbuildup.io</MailAddress>
           </MailBox>
         </TitleContainer>
@@ -72,6 +72,7 @@ const MailBox = styled.div`
   display: flex;
   align-items: center;
   background-color: white;
+  cursor: pointer;
 `;
 
 const MailText = styled.div`
@@ -84,7 +85,6 @@ const MailText = styled.div`
   font-family: 'GmarketSans';
   font-weight: 700;
   font-size: 16px;
-  cursor: pointer;
 `;
 
 const MailAddress = styled.div`

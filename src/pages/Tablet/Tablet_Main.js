@@ -48,7 +48,7 @@ const ContainerWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 700px;
+  min-height: 860px;
   display: flex;
   flex-direction: column;
   align-items: center;
