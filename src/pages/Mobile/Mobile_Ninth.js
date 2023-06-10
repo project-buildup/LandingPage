@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import whiteLogo from '../../assets/whiteLogo.png';
 import locationIcon from '../../assets/locationIcon.png';
 import mailIcon from '../../assets/mailIcon.png';
+import doCopy from '../../hooks/dpCopy';
 
 export default function Mobile_Ninth() {
   return (
@@ -17,17 +18,17 @@ export default function Mobile_Ninth() {
           <TextWrapper className="box2">
             <IconTextWrapper>
               <Icon src={locationIcon} alt="location" />
-              <TextWrapper>
-                <Text>대구광역시 북구 대학로 80 </Text>
-                <Text>(산격동, 경북대학교 글로벌프라자 101호)</Text>
-              </TextWrapper>
+              <Text>대구 북구 호암로 51 대구 삼성 창조 캠퍼스 內 </Text>
             </IconTextWrapper>
-            <IconTextWrapper>
+            <Text style={{ justifyContent: 'center' }}>대구창조경제혁신센터 3층 (41585)</Text>
+            <IconTextWrapper className="secondLine">
               <Icon src={mailIcon} alt="mail" />
-              <Text>contact@projectbuildup.io</Text>
+              <LinkText onClick={() => doCopy('contact@projectbuildup.io')}>contact@projectbuildup.io</LinkText>
             </IconTextWrapper>
           </TextWrapper>
           <TextWrapper className="box4">
+            <LinkText onClick={() => alert('공고가 없어요!')}>공고</LinkText>
+            <TextBar>|</TextBar>
             <LinkText onClick={() => window.open('https://www.instagram.com/gasomann/')}>SNS</LinkText>
             <TextBar>|</TextBar>
             <LinkText
@@ -38,7 +39,11 @@ export default function Mobile_Ninth() {
               채용
             </LinkText>
             <TextBar>|</TextBar>
-            <LinkText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>
+            <LinkText
+              onClick={() =>
+                window.open('https://projectbuildup.notion.site/88eb406b9d9e4908a344ca125d2ce8df?pvs=4', '_blank')
+              }
+            >
               이용약관 및 개인정보처리방침
             </LinkText>
           </TextWrapper>
@@ -87,7 +92,7 @@ const TextWrapper = styled.div`
     width: 200px;
   }
   &.box4 {
-    width: 261px;
+    width: 300px;
     height: 20px;
     display: flex;
     align-items: center;
@@ -98,6 +103,11 @@ const TextWrapper = styled.div`
 const IconTextWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+  justify-content: center;
+
+  &.secondLine {
+    margin-top: 5px;
+  }
 `;
 
 const Icon = styled.img`
