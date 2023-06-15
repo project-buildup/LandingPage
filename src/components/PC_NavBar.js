@@ -4,6 +4,7 @@ import gasomannLogoBlack from '../assets/gasomannLogoBlack.png';
 
 const PC_NavBar = forwardRef(function PC_NavBar(props, ref) {
   const [visible, setVisible] = useState(false);
+  const [mouseOver, setMouseOver] = useState(false);
 
   document.addEventListener('scroll', function () {
     if (document.documentElement.scrollTop > 10) {
@@ -19,6 +20,7 @@ const PC_NavBar = forwardRef(function PC_NavBar(props, ref) {
   const handleContactClick = () => {
     ref?.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
   return (
     <NavBarContainer visible={visible}>
       <LogoImage
@@ -30,9 +32,17 @@ const PC_NavBar = forwardRef(function PC_NavBar(props, ref) {
         <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>ABOUT</NavBarText>
         <NavBarText onClick={() => handleContactClick()}>CONTACT</NavBarText>
         <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>BLOG</NavBarText>
-        <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
-          사전 예약
-        </AppDownloadButton>
+        <AppDownloadButtonWrapper>
+          <AppDownloadButton onClick={() => setMouseOver(true)}>앱 다운로드</AppDownloadButton>
+          <HiddenDownloadButtonWrapper onMouseLeave={() => setMouseOver(false)} mouseOver={mouseOver}>
+            <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+              <DownloadButtonText>Android</DownloadButtonText>
+            </AppDownloadButton>
+            <AppDownloadButton onClick={() => window.open('https://apple.co/42Ih5li', '_blank')}>
+              <DownloadButtonText>iOS</DownloadButtonText>
+            </AppDownloadButton>
+          </HiddenDownloadButtonWrapper>
+        </AppDownloadButtonWrapper>
       </LinkContainer>
     </NavBarContainer>
   );
@@ -78,11 +88,19 @@ const NavBarText = styled.div`
   cursor: pointer;
 `;
 
+const AppDownloadButtonWrapper = styled.div`
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+`;
+
 const AppDownloadButton = styled.div`
   width: 112px;
   height: 35px;
   border-radius: 50px;
-  background-color: #2484f3;
+  background-color: #0047cf;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,4 +109,23 @@ const AppDownloadButton = styled.div`
   font-weight: 700;
   color: white;
   cursor: pointer;
+`;
+
+const DownloadButtonText = styled.div`
+  height: 26px;
+  font-family: 'Pretendard';
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+`;
+
+const HiddenDownloadButtonWrapper = styled.div`
+  position: absolute;
+  padding-top: 35px;
+  visibility: ${(props) => (props.mouseOver ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.mouseOver ? '1' : '0')};
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: ${(props) => (props.mouseOver ? '105px' : '0')};
 `;

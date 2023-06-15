@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import gasomannLogoWhite from '../../assets/gasomannLogoWhite.png';
@@ -15,6 +15,9 @@ const PC_Main = forwardRef(function PC_Main(props, ref) {
   const handleContactClick = () => {
     ref?.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const [mouseOver, setMouseOver] = useState(false);
+
   return (
     <ContainerWrapper>
       <MainContainer>
@@ -24,9 +27,17 @@ const PC_Main = forwardRef(function PC_Main(props, ref) {
             <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>ABOUT</NavBarText>
             <NavBarText onClick={() => handleContactClick()}>CONTACT</NavBarText>
             <NavBarText onClick={() => alert('준비 중이에요. 조금만 기다려주세요!')}>BLOG</NavBarText>
-            <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
-              사전 예약
-            </AppDownloadButton>
+            <AppDownloadButtonWrapper>
+              <AppDownloadButton onClick={() => setMouseOver(true)}>앱 다운로드</AppDownloadButton>
+              <HiddenDownloadButtonWrapper onMouseLeave={() => setMouseOver(false)} mouseOver={mouseOver}>
+                <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+                  <DownloadButtonText>Android</DownloadButtonText>
+                </AppDownloadButton>
+                <AppDownloadButton onClick={() => window.open('https://apple.co/42Ih5li', '_blank')}>
+                  <DownloadButtonText>iOS</DownloadButtonText>
+                </AppDownloadButton>
+              </HiddenDownloadButtonWrapper>
+            </AppDownloadButtonWrapper>
           </LinkContainer>
         </NavBarContainer>
         <BodyContainer>
@@ -42,7 +53,7 @@ const PC_Main = forwardRef(function PC_Main(props, ref) {
                 <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
                 <DownloadButtonText>Google Play</DownloadButtonText>
               </DownloadButton>
-              <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+              <DownloadButton onClick={() => window.open('https://apple.co/42Ih5li', '_blank')}>
                 <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
                 <DownloadButtonText>App Store</DownloadButtonText>
               </DownloadButton>
@@ -105,6 +116,14 @@ const NavBarText = styled.div`
   cursor: pointer;
 `;
 
+const AppDownloadButtonWrapper = styled.div`
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+`;
+
 const AppDownloadButton = styled.div`
   width: 112px;
   height: 35px;
@@ -117,7 +136,16 @@ const AppDownloadButton = styled.div`
   font-size: 16px;
   font-weight: 700;
   color: #2484f3;
-  cursor: pointer;
+`;
+
+const HiddenDownloadButtonWrapper = styled.div`
+  position: absolute;
+  padding-top: 35px;
+  visibility: ${(props) => (props.mouseOver ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.mouseOver ? '1' : '0')};
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: ${(props) => (props.mouseOver ? '105px' : '0')};
 `;
 
 const BodyContainer = styled.div`
@@ -193,7 +221,6 @@ const DownloadButtonContainer = styled.div`
   display: flex;
   width: 336px;
   justify-content: space-between;
-
   animation: fadeInObject 0.8s backwards;
   animation-delay: 1.1s;
 `;

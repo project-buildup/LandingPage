@@ -41,10 +41,18 @@ export default function Tablet_Ninth() {
               <TextBar>|</TextBar>
               <LinkText
                 onClick={() =>
-                  window.open('https://projectbuildup.notion.site/88eb406b9d9e4908a344ca125d2ce8df?pvs=4', '_blank')
+                  window.open('https://projectbuildup.notion.site/5d02a718fc9a41698eb192cf1805acae', '_blank')
                 }
               >
-                이용약관 및 개인정보처리방침
+                이용약관
+              </LinkText>
+              <TextBar>|</TextBar>
+              <LinkText
+                onClick={() =>
+                  window.open('https://www.plip.kr/pcc/8c9a9b64-2555-4e21-a601-a2e2f8bcb2d8/privacy-policy', '_blank')
+                }
+              >
+                개인정보 처리방침
               </LinkText>
             </TextWrapper>
           </TextContainer>

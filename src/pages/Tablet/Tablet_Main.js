@@ -29,7 +29,7 @@ export default function Tablet_Main(props) {
               <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
               <DownloadButtonText>Google Play</DownloadButtonText>
             </DownloadButton>
-            <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+            <DownloadButton onClick={() => window.open('https://apple.co/42Ih5li', '_blank')}>
               <DownloadButtonImage src={appstoreLogo} alt="app store logo" />
               <DownloadButtonText>App Store</DownloadButtonText>
             </DownloadButton>
