@@ -25,7 +25,7 @@ export default function Tablet_Main(props) {
           </LineWrapper>
           <DownloadText>GASOMANN 앱 다운로드</DownloadText>
           <DownloadButtonContainer>
-            <DownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+            <DownloadButton onClick={() => window.open('https://play.google.com/store/apps/details?id=com.gasomann.GASOMANN', '_blank')}>
               <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
               <DownloadButtonText>Google Play</DownloadButtonText>
             </DownloadButton>
