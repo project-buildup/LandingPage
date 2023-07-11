@@ -35,7 +35,11 @@ const PC_NavBar = forwardRef(function PC_NavBar(props, ref) {
         <AppDownloadButtonWrapper>
           <AppDownloadButton onClick={() => setMouseOver(true)}>앱 다운로드</AppDownloadButton>
           <HiddenDownloadButtonWrapper onMouseLeave={() => setMouseOver(false)} mouseOver={mouseOver}>
-            <AppDownloadButton onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}>
+            <AppDownloadButton
+              onClick={() =>
+                window.open('https://play.google.com/store/apps/details?id=com.gasomann.GASOMANN', '_blank')
+              }
+            >
               <DownloadButtonText>Android</DownloadButtonText>
             </AppDownloadButton>
             <AppDownloadButton onClick={() => window.open('https://apple.co/42Ih5li', '_blank')}>

@@ -28,7 +28,9 @@ export default function Mobile_Main({ setOpen, setLoadedPage }) {
           <DownloadButtonContainer>
             <DownloadButton
               className="google"
-              onClick={() => window.open('https://forms.gle/52i4Q2jSreXGGkro8', '_blank')}
+              onClick={() =>
+                window.open('https://play.google.com/store/apps/details?id=com.gasomann.GASOMANN', '_blank')
+              }
             >
               <DownloadButtonImage src={playstoreLogo} alt="google play logo" />
               <DownloadButtonText>Google Play</DownloadButtonText>
